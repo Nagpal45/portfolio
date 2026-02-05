@@ -1,17 +1,16 @@
-import { MotionP } from "@/components/ui/motion";
-
-const textVariants = {
-  initial: { opacity: 0, y: -20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } },
-};
+import Intro from "@/components/Homepage/intro";
+import { MotionDiv } from "@/components/ui/motion";
 
 export default function Home() {
   return (
-    <div className="">
-      <MotionP className="name" variants={textVariants} initial="initial" animate="animate">
-        Hi. <br />
-        I&apos;m Vaibhav.
-      </MotionP>
-    </div>
+    <MotionDiv
+      className="flex flex-col"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Intro />
+    </MotionDiv>
   );
 }

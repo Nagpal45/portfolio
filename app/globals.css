@@ -5,11 +5,12 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-rubik: 'Rubik', sans-serif;
+
+  --breakpoint-custom: 1099px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,17 +20,34 @@
   }
 }
 
+@layer utilities {
+  @keyframes moveGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .headline {
+    background: -webkit-linear-gradient(0deg, #feed8a, #fd9fd9, #a849fb, #c6eafc);
+    animation: moveGradient 5s ease infinite;
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-rubik);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-
   ::-webkit-scrollbar {
     width: 7px;
   }
@@ -39,9 +57,4 @@ body {
   }
 
   -webkit-tap-highlight-color: transparent;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }

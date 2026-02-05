@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
+import BreadcrumbSchema from "@/components/BreadCrumbs";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -195,7 +196,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
-      <body className={`${quicksand.variable} antialiased`}>{children}</body>
+      <body className={`${quicksand.variable} antialiased`}>
+        <BreadcrumbSchema />
+        {children}
+      </body>
     </html>
   );
 }

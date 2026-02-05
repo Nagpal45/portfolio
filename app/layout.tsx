@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 import BreadcrumbSchema from "@/components/BreadCrumbs";
+import { LazyMotion, domAnimation } from "@/components/ui/motion";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -198,7 +199,9 @@ export default function RootLayout({
       </head>
       <body className={`${quicksand.variable} antialiased`}>
         <BreadcrumbSchema />
-        {children}
+        <LazyMotion features={domAnimation}>
+          {children}
+        </LazyMotion>
       </body>
     </html>
   );

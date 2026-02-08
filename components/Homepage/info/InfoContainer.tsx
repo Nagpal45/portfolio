@@ -1,28 +1,35 @@
 "use client";
 
 import "./info.css";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import PropTypes from "prop-types";
-
+import React, { useEffect, useState } from "react";
+import { m, AnimatePresence, PanInfo } from "framer-motion";
 
 const dragVariants = {
   initial: {
     x: 0,
   },
   animate: {
-    x:20,
+    x: 20,
     transition: {
       repeat: Infinity,
-      repeatType: "mirror",
+      repeatType: "mirror" as const,
       duration: 0.8,
       delay: 0,
     },
-  }
+  },
 };
 
+interface CardProps {
+  frontCard: boolean;
+  index: number;
+  setIndex: (index: number) => void;
+  drag?: boolean | "x" | "y" | undefined;
+  backgroundColor: string;
+  cardContents: React.ReactNode[];
+  tooltips: string[];
+}
 
-function Card(props) {
+function Card(props: CardProps) {
   const [x, setX] = useState(0);
   const [rotate, setRotate] = useState(0);
   const [scale, setScale] = useState(1);
@@ -45,7 +52,7 @@ function Card(props) {
     animate: { scale, y: 30, x: 30, opacity: 0.2 },
   };
 
-  function handleDragEnd(_, info) {
+  function handleDragEnd(_: any, info: PanInfo) {
     if (info.offset.x < -100) {
       setExitX(-250);
       setX(-250);
@@ -63,7 +70,7 @@ function Card(props) {
   }
 
   return (
-    <motion.div
+    <m.div
       style={{ backgroundColor: props.backgroundColor }}
       className="card"
       whileTap={{ cursor: "grabbing" }}
@@ -81,59 +88,69 @@ function Card(props) {
           : { scale: { duration: 0.2 }, opacity: { duration: 0.4 } }
       }
     >
-      <motion.div className="card-content">
+      <m.div className="card-content">
         {props.cardContents[props.index % props.cardContents.length]}
         {props.frontCard && (
-        <motion.div className="dragIconwrapper" variants={dragVariants} animate="animate" initial="initial">
-          <img src="/next.png" alt="drag" className="dragIcon" onClick={() => 
-          {
-            setExitX(-250);
-            setX(-250);
-            setRotate(-20);
-            setScale(0.8);
-            props.setIndex(props.index + 1);
-          }
-          } 
-          loading="lazy"
-          />
-          <motion.div className="tooltip">
-            <p>{props.tooltips[props.index % props.tooltips.length]}</p>
-        </motion.div>
-        </motion.div>
+          <m.div
+            className="dragIconwrapper"
+            variants={dragVariants}
+            animate="animate"
+            initial="initial"
+          >
+            <img
+              src="/next.png"
+              alt="drag"
+              className="dragIcon"
+              onClick={() => {
+                setExitX(-250);
+                setX(-250);
+                setRotate(-20);
+                setScale(0.8);
+                props.setIndex(props.index + 1);
+              }}
+              loading="lazy"
+            />
+            <m.div className="tooltip">
+              <p>{props.tooltips[props.index % props.tooltips.length]}</p>
+            </m.div>
+          </m.div>
         )}
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }
 
-Card.propTypes = {
-  frontCard: PropTypes.bool.isRequired,
-  index: PropTypes.number,
-  setIndex: PropTypes.func,
-  drag: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  cardContents: PropTypes.array,
-  tooltips: PropTypes.array,
-};
+interface InfoContainerProps {
+  tooltips: string[];
+  backgroundColors: string[];
+  images: string[];
+  children: React.ReactNode;
+}
 
-export default function InfoClient({ tooltips, cardContents, backgroundColors, images }) {
+export default function InfoContainer({
+  tooltips,
+  backgroundColors,
+  images,
+  children,
+}: InfoContainerProps) {
   const [index, setIndex] = useState(0);
   const [animateInfo, setAnimateInfo] = useState(false);
+  
+  const cardContents = React.Children.toArray(children);
 
   const scrollTriggerPoints = {
     small: 0,
-    medium: 200, 
-    large: 400, 
+    medium: 200,
+    large: 400,
   };
 
-  const getDeviceType = (width) => {
+  const getDeviceType = (width: number) => {
     if (width <= 1200) {
-      return 'small'; 
+      return "small";
     } else if (width <= 2000) {
-      return 'medium'; 
-    }
-     else {
-      return 'large';
+      return "medium";
+    } else {
+      return "large";
     }
   };
 
@@ -148,18 +165,17 @@ export default function InfoClient({ tooltips, cardContents, backgroundColors, i
     };
 
     const deviceType = getDeviceType(window.innerWidth);
-  
-  if (deviceType === 'small') {
-    setTimeout(() => {
-      setAnimateInfo(true);
+
+    if (deviceType === "small") {
+      setTimeout(() => {
+        setAnimateInfo(true);
+      }, 1000);
+    } else {
+      window.addEventListener("scroll", handleScroll);
     }
-    , 1000);
-  } else {
-    window.addEventListener('scroll', handleScroll);
-  }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [animateInfo]);
 
@@ -177,20 +193,22 @@ export default function InfoClient({ tooltips, cardContents, backgroundColors, i
     },
   };
 
-  const [key, setKey] = useState(0)
+  const [key, setKey] = useState(0);
 
   useEffect(() => {
-    setKey(key + 1)
-  }
-  , [index])
+    setKey(key + 1);
+  }, [index]);
 
   return (
-    <motion.div className="info" variants={infoVariants}
-    initial="hidden"
-    animate={animateInfo ? "visible" : "hidden"}>
-      <motion.div className="emoContainer">
-        <motion.img
-        key={key}
+    <m.div
+      className="info"
+      variants={infoVariants}
+      initial="hidden"
+      animate={animateInfo ? "visible" : "hidden"}
+    >
+      <m.div className="emoContainer">
+        <m.img
+          key={key}
           className="infoImg"
           src={images[index % images.length]}
           alt="logo"
@@ -199,14 +217,15 @@ export default function InfoClient({ tooltips, cardContents, backgroundColors, i
           }}
           loading="lazy"
         />
-      </motion.div>
-      <motion.div className="card-container">
+      </m.div>
+      <m.div className="card-container">
         <AnimatePresence>
           <Card
             key={index + 1}
             frontCard={false}
+            index={index + 1} // Pass next index
             setIndex={setIndex}
-            backgroundColor={backgroundColors[index % backgroundColors.length]}
+            backgroundColor={backgroundColors[(index + 1) % backgroundColors.length]}
             cardContents={cardContents}
             tooltips={tooltips}
           />
@@ -221,7 +240,7 @@ export default function InfoClient({ tooltips, cardContents, backgroundColors, i
             tooltips={tooltips}
           />
         </AnimatePresence>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   );
 }

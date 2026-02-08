@@ -53,10 +53,10 @@ export default function Intro() {
             </MotionP>
             <MotionDiv className="details" variants={detailVariants}>
               <MotionP className="detail" >
-                A <u>Web</u> Developer.
+                <u>Software</u> Engineer
               </MotionP>
               <MotionP className="detail">
-                A <u>Data Science</u> Enthusiast.
+                Building <u>Scalable Full-Stack Systems</u>
               </MotionP>
             </MotionDiv>
           </MotionDiv>

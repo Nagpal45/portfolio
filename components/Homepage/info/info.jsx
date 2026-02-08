@@ -45,12 +45,9 @@ const cardContents = [
       alignItems: "center",
       justifyContent: "center",
       flexDirection: "column",}}>
-    I am a passionate and creative programmer with a penchant for
-    problem-solving and a creating solutions.I am on a relentless journey to{" "}
-    explore, create, innovate and my curiosity continues
-    to drive me forward. <br /><br />
-    From crafting elegant code to harnessing the power of data, I&apos;m driven
-    by the challenge of transforming ideas into reality. </p>
+    I am a Full Stack Engineer specializing in Frontend Architecture and System Design. My background in early-stage startups has shaped me to own the entire product lifecycle—from crafting pixel-perfect UIs to deploying robust backend infrastructure.
+<br /><br />
+I thrive in fast-paced environments, shipping high-quality products across Web (Next.js) and Mobile (React Native). Whether optimizing Core Web Vitals for complex animations or architecting scalable systems, I bridge the gap between design and engineering to build software that is as performant as it is beautiful.</p>
     <div style={{
       width:"100%",
       display: "flex",

@@ -1,5 +1,3 @@
-"use client";
-
 import Intro from "@/components/Homepage/intro";
 import { MotionDiv } from "@/components/ui/motion";
 import Info from "@/components/Homepage/info/info";
@@ -18,9 +16,9 @@ export default function Home() {
     >
       <Intro />
       <Info/>
-      <Experience/>
+      {/* <Experience/>
       <Techstack/>
-      <Dice/>
+      <Dice/> */}
     </MotionDiv>
   );
 }

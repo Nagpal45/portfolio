@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Rubik, Quicksand } from "next/font/google";
+import { Rubik, Quicksand, Fredoka } from "next/font/google";
 import "./globals.css";
 import BreadcrumbSchema from "@/components/BreadCrumbs";
 import { LazyMotion, domAnimation } from "@/components/ui/motion";
 import Navbar from "@/components/navbar/navbar";
+import Cursor from "@/components/cursor/cursor";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -15,6 +16,12 @@ const quickSand = Quicksand({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-quicksand",
+});
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-fredoka",
 });
 
 export const BASE_URL = "https://vaibhavnagpal.tech";
@@ -204,9 +211,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
-      <body className={`${rubik.variable} ${quickSand.variable} antialiased`}>
+      <body className={`${rubik.variable} ${quickSand.variable} ${fredoka.variable} antialiased`}>
         <BreadcrumbSchema />
         <LazyMotion features={domAnimation}>
+          <Cursor />
           <Navbar />
           {children}
         </LazyMotion>

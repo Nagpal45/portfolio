@@ -1,5 +1,10 @@
+"use client";
+
 import Intro from "@/components/Homepage/intro";
 import { MotionDiv } from "@/components/ui/motion";
+import Info from "@/components/Homepage/info/info";
+import Techstack from "@/components/Homepage/techstack/techstack";
+import Dice from "@/components/Homepage/dice/dice";
 
 export default function Home() {
   return (
@@ -11,6 +16,9 @@ export default function Home() {
       transition={{ duration: 0.5 }}
     >
       <Intro />
+      <Info/>
+      <Techstack/>
+      <Dice/>
     </MotionDiv>
   );
 }

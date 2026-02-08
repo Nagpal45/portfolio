@@ -1,0 +1,388 @@
+.techStack {
+  width: 100%;
+  height: 75vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: aliceblue;
+}
+
+.techHeading {
+  width: 85%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 6vw;
+}
+
+.skillsHeading {
+  cursor: none;
+  font-size: 5vw;
+  font-weight: 600;
+  margin-bottom: 1vw;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: -webkit-linear-gradient(
+    180deg,
+    #feed8a,
+    #fd9fd9,
+    #a849fb,
+    #c6eafc
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+
+.skillsText {
+  cursor: none;
+  width: 80%;
+  font-size: 1.2vw;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: whitesmoke;
+}
+
+.techstackWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  font-family: Fredoka;
+}
+
+.skillssection {
+  flex: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 45vw;
+}
+
+.line-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.gray-line {
+  background-color: rgb(22, 22, 22);
+  height: 0.2vw;
+  width: 20%;
+}
+
+.centered-text {
+  margin: 0 2vw;
+  font-size: 1vw;
+  font-weight: 600;
+  cursor: none;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2vw;
+  margin-bottom: 2.5vw;
+  width: 70%;
+  margin-left: 1.5vw;
+}
+
+.skill {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin-right: 1.5vw;
+  margin-bottom: 1.5vw;
+  font-size: 0.8vw;
+  font-weight: bolder;
+  text-align: center;
+  position: relative;
+}
+
+.skill:hover {
+  cursor: none;
+}
+
+.category {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category > ul {
+  position: relative;
+  transform: skewY(10deg);
+  cursor: pointer;
+  margin-right: 6vw;
+}
+
+.category > ul li {
+  position: relative;
+  list-style: none;
+  width: 18vw;
+  padding: 1.2vw;
+  z-index: var(--i);
+  height: 6vw;
+  font-weight: 600;
+  font-size: 1.5vw;
+  color: black;
+}
+
+.Web,
+.Data,
+.Other {
+  background: #c6eafc;
+}
+
+.Web::before,
+.Data::before,
+.Other::before {
+  background: #6acdfe;
+}
+
+.Web::after,
+.Data::after,
+.Other::after {
+  background: #6acdfe;
+}
+
+.activeWeb,
+.Web:hover {
+  background: #f9edaa;
+  transition: 0.5s;
+}
+
+.activeWeb {
+  transform: translateX(-4.5vw);
+}
+
+.activeWeb::before,
+.activeWeb::after,
+.Web:hover::before,
+.Web:hover::after {
+  background: #fce66a;
+}
+
+.activeData,
+.Data:hover {
+  background: #ffc4e8;
+  transition: 0.5s;
+}
+
+.activeData {
+  transform: translateX(-4.5vw);
+}
+
+.activeData::before,
+.activeData::after,
+.Data:hover::before,
+.Data:hover::after {
+  background: #fd9fd9;
+}
+
+.activeOther,
+.Other:hover {
+  background: #ddbafc;
+  transition: 0.5s;
+}
+
+.activeOther {
+  transform: translateX(-4.5vw);
+}
+
+.activeOther::before,
+.activeOther::after,
+.Other:hover::before,
+.Other:hover::after {
+  background: #a849fb;
+}
+
+.category > ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -40px;
+  width: 40px;
+  height: 100%;
+  transform-origin: left;
+  transform: skewY(-45deg);
+  transition: 0.5s;
+}
+
+.category > ul li::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -40px;
+  height: 40px;
+  width: 100%;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
+  transition: 0.5s;
+}
+
+.category > ul li:last-child::after {
+  box-shadow: 15vw 15vw 1.5vw rgba(255, 255, 255, 0.2);
+}
+
+.skill > img {
+  width: 3vw;
+  height: 3vw;
+  background: transparent;
+}
+
+.skillNameOnHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  opacity: 0;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill:hover .skillNameOnHover {
+  opacity: 0.8;
+}
+
+.viewProjects {
+  width: 85%;
+  margin-top: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.viewProjectsText {
+  width: 60%;
+  font-size: 1.2vw;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: whitesmoke;
+  cursor: none;
+}
+
+.viewProjectsButton {
+  margin-right: 7vw;
+}
+
+.oval {
+  border-radius: 50vw;
+  width: 8vw;
+  height: 4vw;
+}
+
+@media (max-width: 1100px) {
+  .techStack {
+    height: 210vw;
+  }
+
+  .skillsHeading {
+    font-size: 8vw;
+    margin-top: 1vw;
+  }
+  .skillsText {
+    font-size: 3vw;
+    width: 100%;
+  }
+  .techstackWrapper {
+    flex: 5;
+    flex-direction: column;
+  }
+  .skillssection {
+    flex: 2;
+    margin-top: 10vw;
+  }
+  .skills {
+    width: 90%;
+    margin-left: 3vw;
+  }
+  .skill {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 2vw;
+    margin-right: 3vw;
+    margin-bottom: 3vw;
+    font-size: 1.9vw;
+  }
+
+  .category {
+    flex: 2;
+    justify-content: flex-end;
+  }
+
+  .gray-line {
+    width: 25vw;
+  }
+
+  .centered-text {
+    font-size: 2vw;
+  }
+  .viewProjects {
+    flex: 1;
+  }
+
+  .skill > img {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .category > ul {
+    margin-top: 15vw;
+  }
+
+  .category > ul li {
+    width: 30vw;
+    padding: 2vw;
+    height: 7vw;
+    font-size: 3vw;
+  }
+
+  .viewProjects {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10vw;
+  }
+
+  .viewProjectsText {
+    width: 80%;
+    font-size: 3vw;
+  }
+
+  .viewProjectsButton {
+    margin-left: 65vw;
+  }
+
+  .oval {
+    width: 19vw;
+    height: 10vw;
+    border-radius: 15vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .skillsHeading {
+    font-size: 8vw;
+    margin-top: 8vw;
+  }
+}

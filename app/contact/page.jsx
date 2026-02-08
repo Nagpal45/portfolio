@@ -83,7 +83,7 @@ const Contact = () => {
               setFormData({ ...formData, message: e.target.value })
             }
           />
-          <button type="submit" style={{ background: emailSent && "#CBC3E3" }}>
+          <button type="submit" style={{ background: emailSent && "#CBC3E3" }} className="text-black mr-3">
             {emailSent ? "Thanks" : "Send"}
           </button>
         </motion.form>

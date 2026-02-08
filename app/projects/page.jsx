@@ -137,7 +137,7 @@ export default function Projects() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
       className="projectMain project9" style={{width:"90%"}}>
-            <div className="projHead">
+            <div className="projHead mt-4">
               <p className="projTitle">{projectsData[10].title}</p>
               <div className="time">
                 <p className="timeText">

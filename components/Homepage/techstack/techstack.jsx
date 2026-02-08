@@ -6,28 +6,29 @@ import Link from "next/link";
 export default function Techstack() {
   const webSkills = [
     [
-      { name: "HTML", logo: "html.png" },
-      { name: "CSS", logo: "css.png" },
-      { name: "JavaScript", logo: "js.png" },
-      { name: "PHP", logo: "php.png" },
+      { name: "JavaScript (ES6+)", logo: "js.png" },
+      { name: "TypeScript", logo: "typescript.png" },
+      { name: "Python", logo: "python.png" },
+      { name: "HTML5", logo: "html.png" },
+      { name: "CSS3/SASS", logo: "sass.png" },
     ],
     [
       { name: "React.js", logo: "react.png" },
-      { name: "Node.js", logo: "node-js.png" },
-      { name: "Express.js", logo: "express.png" },
-      { name: "Bootstrap", logo: "bootstrap.png" },
-      { name: "Tailwind CSS", logo: "tailwind.png" },
-      { name: "SaSS", logo: "sass.png" },
+      { name: "Next.js", logo: "nextjs.png" },
+      { name: "React Native", logo: "react.png" },
       { name: "Redux", logo: "redux.jpg" },
-      { name: "Material UI", logo: "material.png" },
-      { name: "jQuery", logo: "jquery.png" },
+      { name: "Tailwind CSS", logo: "tailwind.png" },
+      { name: "Framer Motion", logo: "framer.png" },
     ],
     [
+      { name: "Node.js", logo: "node-js.png" },
+      { name: "Express.js", logo: "express.png" },
       { name: "MongoDB", logo: "mongodb.png" },
-      { name: "MySQL", logo: "mysql.png" },
-      { name: "Postman", logo: "postman.png" },
-      { name: "Git", logo: "git.png" },
-      { name: "Render", logo: "render.png" },
+      { name: "PostgreSQL", logo: "postgresql.png" },
+      { name: "Redis", logo: "redis.png" },
+      { name: "Docker", logo: "docker.png" },
+      { name: "AWS", logo: "aws.png" },
+      { name: "Cloudflare", logo: "cloudflare.png" },
     ],
   ];
 
@@ -52,25 +53,21 @@ export default function Techstack() {
   ];
 
   const otherSkills = [
+    [],
     [
-      { name: "C", logo: "c.png" },
-      { name: "C++", logo: "c++.png" },
-    ],
-    [
-      "Data Structures ",
-      "Algorithms",
+      "DSA",
       "OOPS",
-      "Operating Systems",
       "DBMS",
-      "Computer Architecture",
+      "Operating Systems",
+      "System Design",
     ],
     [
       "Adaptability",
       "Problem Solving",
-      "Storytelling",
-      "Productivity",
-      "Organization",
-      "Time Management",
+      "Team Collaboration",
+      "Technical Leadership",
+      "Project Management",
+      "Communication",
     ],
   ];
 
@@ -211,7 +208,7 @@ export default function Techstack() {
                 }
               >
                 <div className="gray-line"></div>
-                <div className="centered-text">Frameworks & Libraries</div>
+                <div className="centered-text">Frontend & UI</div>
                 <div className="gray-line"></div>
               </motion.div>
               <motion.div className="skills"
@@ -250,7 +247,7 @@ export default function Techstack() {
                 }
               >
                 <div className="gray-line"></div>
-                <div className="centered-text">Databases & Tools</div>
+                <div className="centered-text">Backend & Cloud/DevOps</div>
                 <div className="gray-line"></div>
               </motion.div>
               <motion.div className="skills"
@@ -410,48 +407,7 @@ export default function Techstack() {
                 }
               >
                 <div className="gray-line"></div>
-                <div className="centered-text">Languages</div>
-                <div className="gray-line"></div>
-              </motion.div>
-              <motion.div className="skills"
-              initial="hidden"
-                animate="visible"
-                variants={{
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.1,
-                      duration: 1,
-                    },
-                  },
-                }}>
-                {otherSkills[0].map((skill, i) => (
-                  <motion.div
-                    style={{
-                      background: "#eddcfc",
-
-                    }}
-                    className="skill"
-                    key={i}
-                    variants={skillVariants}
-                  >
-                    <img src={skill.logo} alt={skill.name} loading="lazy" />
-                    <div className="skillNameOnHover">{skill.name}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
-              <motion.div className="line-container"
-              initial= {
-                  {opacity: 0}
-                }
-                animate= {
-                  {opacity: 1}
-                }
-                transition= {
-                  {duration: 1.5}
-                }
-              >
-                <div className="gray-line"></div>
-                <div className="centered-text">Theoretical</div>
+                <div className="centered-text">Core Computer Science</div>
                 <div className="gray-line"></div>
               </motion.div>
               <motion.div className="skills"
@@ -491,7 +447,7 @@ export default function Techstack() {
                 }
               >
                 <div className="gray-line"></div>
-                <div className="centered-text">Interpersonal skills</div>
+                <div className="centered-text">Interpersonal Skills</div>
                 <div className="gray-line"></div>
               </motion.div>
               <motion.div className="skills"
@@ -530,7 +486,7 @@ export default function Techstack() {
                 selectedCategory === "webSkills" ? "activeWeb Web" : "Web"
               }
             >
-              Web Development
+              Development
             </li>
             <li
               style={{ "--i": 2 }}

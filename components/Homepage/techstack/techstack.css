@@ -8,6 +8,10 @@
   color: aliceblue;
 }
 
+.skillText{
+  font-weight: 500;
+}
+
 .techHeading {
   width: 85%;
   display: flex;
@@ -80,7 +84,7 @@
 .centered-text {
   margin: 0 2vw;
   font-size: 1vw;
-  font-weight: 600;
+  font-weight: 500;
   cursor: none;
 }
 
@@ -137,7 +141,7 @@
   padding: 1.2vw;
   z-index: var(--i);
   height: 6vw;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5vw;
   color: black;
 }

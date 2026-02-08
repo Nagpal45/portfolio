@@ -2,8 +2,28 @@
 import Link from "next/link";
 import "./projects.css";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Projects() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"];
+
+  // Auto-change slider every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   const projectsData = [
     {
       title: "Chorus",
@@ -150,7 +170,15 @@ export default function Projects() {
       repoLink: "https://github.com/Nagpal45/Codaborate",
       status: "Dec 2024",
       techs: [
-        "Next.js", "Tailwind CSS", "Clerk", "tRPC", "AssemblyAI", "Stripe", "Supabase", "Gemini AI", "RAG"
+        "Next.js",
+        "Tailwind CSS",
+        "Clerk",
+        "tRPC",
+        "AssemblyAI",
+        "Stripe",
+        "Supabase",
+        "Gemini AI",
+        "RAG",
       ],
     },
   ];
@@ -221,11 +249,131 @@ export default function Projects() {
             </a>
           </div>
         </div>
-        <iframe
-          src="https://flat-quest.vercel.app/"
-          alt="Recent Project"
-          className="projectRecent"
-        ></iframe>
+        <div
+          className="imageSlider"
+          style={{
+            position: "relative",
+            width: "95%",
+            margin: "40px",
+            borderRadius: "12px",
+            // overflow: "hidden",
+            boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <img
+            src={images[currentImageIndex]}
+            alt={`Codaborate Screenshot ${currentImageIndex + 1}`}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              cursor: "pointer",
+              transition: "opacity 0.5s ease",
+            }}
+          />
+          
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevImage}
+            style={{
+              position: "absolute",
+              left: "-30px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255, 255, 255, 0.8)",
+              border: "none",
+              borderRadius: "50%",
+              width: "50px",
+              height: "50px",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "20px",
+              fontWeight: "bold",
+              color: "#333",
+              backdropFilter: "blur(5px)",
+              transition: "all 0.3s ease",
+              zIndex: 10,
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.95)";
+              e.target.style.transform = "translateY(-50%) scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.8)";
+              e.target.style.transform = "translateY(-50%) scale(1)";
+            }}
+          >
+            ‹
+          </button>
+          
+          <button
+            onClick={nextImage}
+            style={{
+              position: "absolute",
+              right: "-30px",
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255, 255, 255, 0.8)",
+              border: "none",
+              borderRadius: "50%",
+              width: "50px",
+              height: "50px",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "20px",
+              fontWeight: "bold",
+              color: "#333",
+              backdropFilter: "blur(5px)",
+              transition: "all 0.3s ease",
+              zIndex: 10,
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.95)";
+              e.target.style.transform = "translateY(-50%) scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = "rgba(255, 255, 255, 0.8)";
+              e.target.style.transform = "translateY(-50%) scale(1)";
+            }}
+          >
+            ›
+          </button>
+          
+          {/* Dot Indicators */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "-15px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              display: "flex",
+              gap: "8px",
+              zIndex: 10,
+            }}
+          >
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  borderRadius: "50%",
+                  border: "none",
+                  background: currentImageIndex === index 
+                    ? "rgba(255, 255, 255, 0.9)" 
+                    : "rgba(255, 255, 255, 0.4)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                }}
+              />
+            ))}
+          </div>
+        </div>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: -20 }}

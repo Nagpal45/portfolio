@@ -1,0 +1,278 @@
+.navbar {
+  width: 100%;
+  height: 4.5vw;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: quicksand;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  padding-top: 0.5vw;
+}
+
+
+
+.navbarItems {
+  flex: 5;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 3vw;
+}
+
+.navbarItem {
+  margin-left: 2.5vw;
+  font-size: 1.1vw;
+  font-weight: bold;
+  color: white;
+    cursor: pointer;
+  height: 100%;
+}
+
+.socialItems {
+  flex: 1;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 4vw;
+}
+
+.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  width: 6.5vw;
+  border-radius: 2vw;
+  height: 2.6vw;
+  transition: background-color 1s;
+}
+
+
+.socialItem{
+  width: 1.3vw;
+  height: 1.4vw;
+}
+.insta{
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.linked{
+  width: 1.3vw;
+  height: 1.3vw;
+
+}
+
+.git{
+  width: 1.5vw;
+  height: 1.6vw;
+}
+
+
+
+.hamburger{
+  display: none;
+}
+
+.mobileNavbarItems{
+  display: none;
+}
+
+.mobileMenu{
+  display: none;
+}
+
+.socialCircle{
+  display: none;
+}
+
+.openCircle{
+  display: none;
+}
+
+
+
+@media (max-width: 1100px) {
+  .navbar {
+    height: 10vw;
+  }
+
+  .navbarItems {
+    margin-left: 1vw;
+    justify-content: flex-start;
+  }
+
+  .active{
+    width: 11vw;
+    height: 5vw;
+    border-radius: 3vw;
+  }
+
+  .navbarItem {
+    font-size: 2vw;
+    margin-left: 4vw;
+   }
+
+
+   .socialItem{
+    width: 2.5vw;
+    height: 2.5vw;
+   }
+
+    .socialItems > a {
+      margin-right: 3vw;
+    }
+}
+
+@media (max-width : 600px){
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 3vw;
+  }
+
+  .socialItems{
+   display: none;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .open:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+  }
+  
+  .open:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open:nth-child(3) {
+    transform: rotate(45deg) translate(-7px, -6px);
+  }
+
+  .navbarItems{
+    display: none;
+  }
+
+
+  .mobileNavbarItems{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    border-radius: 5vw;
+    width: 35vw;
+    height: 40vw;
+    top: 15vw;
+    left: 5vw;
+    z-index: 999;
+  }
+
+  .navbar{
+    height: 15vw;
+  }
+
+  .navbarItem{
+    margin-left: 0;
+    font-size: 3.5vw;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15vw;
+  }
+
+  .navbarItems{
+    margin-left: 4vw;
+  }
+  .active{
+    background-color: rgb(202, 241, 254);
+    color: black;
+    opacity:1;
+    border-radius: 5vw;
+    transition: background-color 0.5s;
+  }
+
+  .socialItems{
+    margin-right: 1vw;
+  }
+
+  .socialCircle{
+    width: 9vw;
+    height: 9vw;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3vw;
+    right: 4vw;
+    transform: rotate(0deg);
+  transition: transform 1s;
+  z-index: 5;
+}
+
+.network{
+  background: transparent;
+  width: 4vw;
+  height: 4vw;
+}
+
+.socialItemContainer{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 8vw;
+  height: 8vw;
+  background-color: #1a1a1a;
+  top: 3.5vw;
+  right: 5.5vw;
+}
+
+.openCircle{
+  background-color: #1a1a1a;
+  transform: rotate(90deg);
+  transition: transform 1s;
+}
+
+.openCircle > img{
+  filter: invert(100%);
+}
+
+
+.mobileMenu{
+  display: block;
+  width: 35vw;
+  height: 48vw;
+  background-color: rgba(0, 0, 0);
+  border-radius: 0 0 0 50vw;
+  z-index: 4;
+}
+
+.socialItemContainer > img{
+  width: 4vw;
+  height: 4vw;
+}
+}

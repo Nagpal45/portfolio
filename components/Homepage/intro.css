@@ -1,0 +1,356 @@
+.intro{
+    width: 100%;
+    height: 42rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Rubik;
+}
+
+
+.main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.left{
+    flex:1.1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    height:100%;
+}
+
+.headline{
+    flex: 4.5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 14rem;
+}
+
+.introButtons{
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 15rem;
+}
+.Navbutton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navbutton:nth-of-type(2){
+    margin-left: 1.5rem;
+}
+
+
+.downloadResume{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 2rem;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    font-size: 1.1rem;
+    font-family: quicksand;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.downloadIcon{
+    background: transparent;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 1rem;
+}
+
+.downloadResume:hover{
+    cursor: none;
+    background-color: #cceeff;
+    color: black;
+    border: 2px solid black;
+
+    .resume{
+        color: black;
+        background-color: #cceeff;
+    }
+
+    .downloadIcon{
+        filter: invert(100%);
+    }
+
+    .contact{
+        color: black;
+        background-color: #cceeff;
+    }
+
+   
+}
+
+
+.name{
+    font-size: 7rem;
+    color: white;
+    font-weight: 500;
+    background: -webkit-linear-gradient(0deg, #feed8a, #fd9fd9, #a849fb, #c6eafc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: moveGradient 5s ease infinite;
+}
+
+.headline:hover{
+    cursor: none;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.details{
+    font-size: 2rem;
+    color: white;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+}
+
+
+.detail{
+    margin-bottom: 0.7rem;
+}
+
+u{
+    font-weight: 500;
+    text-underline-offset: 5px;
+    text-decoration-color: #992ff6;
+}
+
+.right{
+    flex:1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.top{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.center{
+    flex: 1;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.squaresA{
+    width: 32rem;
+    height: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.squaresB{
+    width: 32rem;
+    height: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.image{
+    width: 25rem;
+    height: 27rem;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.square1{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.7rem;
+    background: -webkit-linear-gradient(90deg, #96d9fb, #fd9fd9);
+}
+.square2{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.7rem;
+    background: -webkit-linear-gradient(90deg, #feed8a , #a849fb);
+
+}
+.square3{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.7rem;
+    background: -webkit-linear-gradient(90deg, #a849fb, #96d9fb);
+}
+.square4{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.7rem;
+    background: -webkit-linear-gradient(90deg, #fd9fd9, #feed8a);
+
+}
+
+.image:hover, .square1:hover, .square2:hover, .square3:hover, .square4:hover{
+    cursor: none;
+}
+
+
+@media (max-width: 1100px) {
+    .intro{
+        height: 140rem;
+    }
+    .main{
+        flex-direction: column;
+    }
+    .left{
+        flex: 1;
+        width: 100%;
+    }
+    .headline{
+        flex: 4;
+        align-items: center;
+        padding-left: 0;
+    }
+    .name{
+        font-size: 13rem;
+        text-align: center;
+    }
+    .details{
+        margin-top: 5rem;
+        font-size: 4rem;
+        text-align: center;
+    }
+    .introButtons{
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+    }
+    .Navbutton:nth-of-type(2){
+        margin-left: 3rem;
+    }
+
+    .downloadResume{
+        width: 17rem;
+        height: 5.5rem;
+        border-radius: 5rem;
+        font-size: 2rem;
+    }
+
+    .downloadIcon{
+        width: 1.8rem;
+        height: 1.8rem;
+        margin-right: 1.5rem;
+    }
+
+    .right{
+        flex: 1;
+        padding-right: 0;
+    }
+    .image{
+        width: 35rem;
+        height: 35rem;
+        margin-left: 1rem;
+    }
+
+    .squaresA, .squaresB{
+        width: 50rem;
+    }
+
+    .square1, .square2, .square3, .square4{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 1rem;
+    }
+}
+
+@media (max-width:600px){
+
+    .intro{
+        height: 180rem
+    }
+
+    .name{
+        font-size: 15rem;
+        text-align: center;
+    }
+    .details{
+        margin-top: 5rem;
+        font-size: 5rem;
+        text-align: center;
+    }
+    .headline{
+        flex: 5;
+    }
+
+    .image{
+        width: 45rem;
+        height: 45rem;
+    }
+    .squaresA, .squaresB{
+        width: 60rem;
+    }
+    .square1, .square2, .square3, .square4{
+        width: 7rem;
+        height: 7rem;
+        border-radius: 1.5rem;
+    }
+
+    .downloadResume{
+        width: 25rem;
+        height: 8rem;
+        font-size: 3rem;
+    }
+
+    .downloadIcon{
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-right: 2rem;
+    }
+}

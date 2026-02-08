@@ -15,36 +15,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
 
-@layer utilities {
-  @keyframes moveGradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .headline {
-    background: -webkit-linear-gradient(0deg, #feed8a, #fd9fd9, #a849fb, #c6eafc);
-    animation: moveGradient 5s ease infinite;
-    background-size: 200% 200%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-rubik);
+  line-height: 1;
 }
 
 * {

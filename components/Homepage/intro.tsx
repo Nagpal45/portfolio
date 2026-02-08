@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { MotionDiv, MotionImg, MotionP } from "@/components/ui/motion";
+import DownloadResumeButton from "../ui/DownloadResumeButton";
+import "./intro.css";
 
 export default function Intro() {
   const textVariants = {
@@ -63,7 +65,7 @@ export default function Intro() {
               className="Navbutton"
               variants={buttonVariants}
             >
-
+              <DownloadResumeButton />
             </MotionDiv>
             <MotionDiv
               className="Navbutton"

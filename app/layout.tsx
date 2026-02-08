@@ -1,13 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Rubik } from "next/font/google";
+import { Rubik, Quicksand } from "next/font/google";
 import "./globals.css";
 import BreadcrumbSchema from "@/components/BreadCrumbs";
 import { LazyMotion, domAnimation } from "@/components/ui/motion";
+import Navbar from "@/components/navbar/navbar";
 
 const rubik = Rubik({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-rubik",
+});
+
+const quickSand = Quicksand({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-quicksand",
 });
 
 export const BASE_URL = "https://vaibhavnagpal.tech";
@@ -197,9 +204,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
       </head>
-      <body className={`${rubik.variable} antialiased`}>
+      <body className={`${rubik.variable} ${quickSand.variable} antialiased`}>
         <BreadcrumbSchema />
         <LazyMotion features={domAnimation}>
+          <Navbar />
           {children}
         </LazyMotion>
       </body>

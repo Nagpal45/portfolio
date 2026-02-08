@@ -19,3 +19,6 @@ export const MotionUl = m.ul;
 export const MotionOl = m.ol;
 export const MotionButton = m.button;
 export const MotionSection = m.section;
+export const MotionForm = m.form;
+export const MotionPath = m.path;
+export const MotionSvg = m.svg;

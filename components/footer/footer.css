@@ -1,0 +1,21 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:5.5vw;
+    background-color: #040404;
+    color: white;
+    font-family: fredoka;
+    cursor: none;
+    font-size: 1vw;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer{
+        height: 11vw;
+        font-size: 1.5vw;
+    }
+}

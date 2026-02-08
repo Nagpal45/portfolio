@@ -5,6 +5,7 @@ import BreadcrumbSchema from "@/components/BreadCrumbs";
 import { LazyMotion, domAnimation } from "@/components/ui/motion";
 import Navbar from "@/components/navbar/navbar";
 import Cursor from "@/components/cursor/cursor";
+import Footer from "@/components/footer/footer";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -217,6 +218,7 @@ export default function RootLayout({
           <Cursor />
           <Navbar />
           {children}
+          <Footer />
         </LazyMotion>
       </body>
     </html>

@@ -16,8 +16,8 @@ export default function Home() {
     >
       <Intro />
       <Info/>
-      {/* <Experience/>
-      <Techstack/>
+      <Experience/>
+      {/* <Techstack/>
       <Dice/> */}
     </MotionDiv>
   );

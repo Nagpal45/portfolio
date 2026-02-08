@@ -1,7 +1,17 @@
-"use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
 import "./experience.css";
+import { 
+  ExperienceContainer, 
+  ExperienceTimeline, 
+  ExperienceViewportSpy 
+} from "./ExperienceClient";
+import { 
+  MotionH2, 
+  MotionDiv, 
+  MotionH3, 
+  MotionA, 
+  MotionUl, 
+  MotionLi 
+} from "@/components/ui/motion";
 
 interface ExperienceItem {
   date: string;
@@ -55,26 +65,10 @@ const experienceData: ExperienceItem[] = [
 ];
 
 export default function Experience() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"]
-  });
-
-  const timelineProgress = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
-    <motion.section
-      ref={containerRef}
-      className="experience-section"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
+    <ExperienceContainer>
       <div className="experience-container">
-        <motion.h2
+        <MotionH2
           className="experience-title"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,51 +76,23 @@ export default function Experience() {
           viewport={{ once: true }}
         >
           Work Experience
-        </motion.h2>
+        </MotionH2>
 
         <div className="experience-content">
           {/* Continuous Timeline */}
-          <div className="timeline-container">
-            <div className="timeline-track">
-              <motion.div 
-                className="timeline-progress"
-                style={{ 
-                  height: timelineProgress
-                }}
-              />
-              {experienceData.map((_, index) => (
-                <motion.div
-                  key={index}
-                  className={`timeline-dot ${activeIndex >= index ? 'active' : ''}`}
-                  style={{
-                    top: `${(index / (experienceData.length - 1)) * 100}%`,
-                  }}
-                  whileHover={{ scale: 1.2 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                />
-              ))}
-            </div>
-          </div>
+          <ExperienceTimeline count={experienceData.length} />
 
           {/* Experience Items */}
           <div className="experience-items">
             {experienceData.map((item, index) => (
-              <motion.div
-                key={index}
-                className="experience-item"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true, margin: "-100px" }}
-                onViewportEnter={() => setActiveIndex(index)}
-              >
+              <ExperienceViewportSpy key={index} index={index}>
                 {/* Content */}
                 <div className="experience-details">
                   {/* Info with image inside */}
                   <div className="experience-info">
                     <div className="experience-content">
                       <div className="experience-text">
-                        <motion.div
+                        <MotionDiv
                           className="experience-date"
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
@@ -134,9 +100,9 @@ export default function Experience() {
                           viewport={{ once: true }}
                         >
                           {item.date}
-                        </motion.div>
+                        </MotionDiv>
                         
-                        <motion.h3
+                        <MotionH3
                           className="experience-job-title"
                           initial={{ opacity: 0, y: 10 }}
                           whileInView={{ opacity: 1, y: 0 }}
@@ -144,9 +110,9 @@ export default function Experience() {
                           viewport={{ once: true }}
                         >
                           {item.title}
-                        </motion.h3>
+                        </MotionH3>
                         
-                        <motion.a
+                        <MotionA
                           href={item.companyUrl}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -158,9 +124,9 @@ export default function Experience() {
                           whileHover={{ scale: 1.05 }}
                         >
                           @ {item.company}
-                        </motion.a>
+                        </MotionA>
 
-                        <motion.ul
+                        <MotionUl
                           className="experience-description"
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
@@ -168,7 +134,7 @@ export default function Experience() {
                           viewport={{ once: true }}
                         >
                           {item.description.map((desc: string, descIndex: number) => (
-                            <motion.li
+                            <MotionLi
                               key={descIndex}
                               initial={{ opacity: 0, x: -10 }}
                               whileInView={{ opacity: 1, x: 0 }}
@@ -176,37 +142,39 @@ export default function Experience() {
                               viewport={{ once: true }}
                             >
                               {desc}
-                            </motion.li>
+                            </MotionLi>
                           ))}
-                        </motion.ul>
+                        </MotionUl>
                       </div>
 
                       {/* Image on the right inside the card */}
-                      {item.image && <motion.a
-                        href={item.image.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="experience-card"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
-                        viewport={{ once: true }}
-                        whileHover={{ 
-                          scale: 1.05,
-                          transition: { type: "spring", stiffness: 300 }
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <img src={item.image.src} alt={item.image.alt} />
-                      </motion.a>}
+                      {item.image && (
+                         <MotionA
+                            href={item.image.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="experience-card"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
+                            viewport={{ once: true }}
+                            whileHover={{ 
+                              scale: 1.05,
+                              transition: { type: "spring", stiffness: 300 }
+                            }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                          <img src={item.image.src} alt={item.image.alt} />
+                        </MotionA>
+                      )}
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </ExperienceViewportSpy>
             ))}
           </div>
         </div>
       </div>
-    </motion.section>
+    </ExperienceContainer>
   );
 }

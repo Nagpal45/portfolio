@@ -47,7 +47,7 @@ export default function Navbar() {
           <Link
             href="/"
             className={`navbarItem ${
-              location.pathname === "/" ? "active" : ""
+              location === "/" ? "active" : ""
             }`}
             onClick={scrollToTop}
           >
@@ -56,7 +56,7 @@ export default function Navbar() {
           <Link
             href="/projects"
             className={`navbarItem ${
-              location.pathname === "/projects" ? "active" : ""
+              location === "/projects" ? "active" : ""
             }`}
             onClick={scrollToTop}
           >
@@ -65,7 +65,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             className={`navbarItem ${
-              location.pathname === "/contact" ? "active" : ""
+              location === "/contact" ? "active" : ""
             }`}
             onClick={scrollToTop}
           >
@@ -83,7 +83,7 @@ export default function Navbar() {
           <Link
             href="/"
             className={`navbarItem ${
-              location.pathname === "/" ? "active" : ""
+              location === "/" ? "active" : ""
             }`}
             onClick={handleLinkClick}
           >
@@ -92,7 +92,7 @@ export default function Navbar() {
           <Link
             href="/projects"
             className={`navbarItem ${
-              location.pathname === "/projects" ? "active" : ""
+              location === "/projects" ? "active" : ""
             }`}
             onClick={handleLinkClick}
           >
@@ -101,7 +101,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             className={`navbarItem ${
-              location.pathname === "/contact" ? "active" : ""
+              location === "/contact" ? "active" : ""
             }`}
             onClick={handleLinkClick}
           >

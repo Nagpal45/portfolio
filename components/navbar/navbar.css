@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  height: 4.5vw;
+  height: 4.5rem;
   z-index: 999;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,7 @@
   position: sticky;
   top: 0;
   background-color: black;
-  padding-top: 0.5vw;
+  padding-top: 0.5rem;
 }
 
 
@@ -20,12 +20,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 3vw;
+  margin-left: 3rem;
 }
 
 .navbarItem {
-  margin-left: 2.5vw;
-  font-size: 1.1vw;
+  margin-left: 2.5rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: white;
     cursor: pointer;
@@ -40,7 +40,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin-right: 4vw;
+  margin-right: 4rem;
 }
 
 .active {
@@ -49,31 +49,31 @@
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
-  width: 6.5vw;
-  border-radius: 2vw;
-  height: 2.6vw;
+  width: 6.5rem;
+  border-radius: 2rem;
+  height: 2.6rem;
   transition: background-color 1s;
 }
 
 
 .socialItem{
-  width: 1.3vw;
-  height: 1.4vw;
+  width: 1.3rem;
+  height: 1.4rem;
 }
 .insta{
-  width: 1.5vw;
-  height: 1.5vw;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .linked{
-  width: 1.3vw;
-  height: 1.3vw;
+  width: 1.3rem;
+  height: 1.3rem;
 
 }
 
 .git{
-  width: 1.5vw;
-  height: 1.6vw;
+  width: 1.5rem;
+  height: 1.6rem;
 }
 
 
@@ -102,33 +102,33 @@
 
 @media (max-width: 1100px) {
   .navbar {
-    height: 10vw;
+    height: 10rem;
   }
 
   .navbarItems {
-    margin-left: 1vw;
+    margin-left: 1rem;
     justify-content: flex-start;
   }
 
   .active{
-    width: 11vw;
-    height: 5vw;
-    border-radius: 3vw;
+    width: 11rem;
+    height: 5rem;
+    border-radius: 3rem;
   }
 
   .navbarItem {
-    font-size: 2vw;
-    margin-left: 4vw;
+    font-size: 2rem;
+    margin-left: 4rem;
    }
 
 
    .socialItem{
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 2.5rem;
+    height: 2.5rem;
    }
 
     .socialItems > a {
-      margin-right: 3vw;
+      margin-right: 3rem;
     }
 }
 
@@ -137,7 +137,7 @@
     display: block;
     cursor: pointer;
     padding: 10px;
-    margin-left: 3vw;
+    margin-left: 3rem;
   }
 
   .socialItems{
@@ -176,57 +176,57 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(0, 0, 0);
-    border-radius: 5vw;
-    width: 35vw;
-    height: 40vw;
-    top: 15vw;
-    left: 5vw;
+    border-radius: 5rem;
+    width: 35rem;
+    height: 40rem;
+    top: 15rem;
+    left: 5rem;
     z-index: 999;
   }
 
   .navbar{
-    height: 15vw;
+    height: 15rem;
   }
 
   .navbarItem{
     margin-left: 0;
-    font-size: 3.5vw;
+    font-size: 3.5rem;
     background-color: transparent;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 15vw;
+    height: 15rem;
   }
 
   .navbarItems{
-    margin-left: 4vw;
+    margin-left: 4rem;
   }
   .active{
     background-color: rgb(202, 241, 254);
     color: black;
     opacity:1;
-    border-radius: 5vw;
+    border-radius: 5rem;
     transition: background-color 0.5s;
   }
 
   .socialItems{
-    margin-right: 1vw;
+    margin-right: 1rem;
   }
 
   .socialCircle{
-    width: 9vw;
-    height: 9vw;
+    width: 9rem;
+    height: 9rem;
     border-radius: 50%;
     background-color: white;
-    margin-right: 1vw;
+    margin-right: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 3vw;
-    right: 4vw;
+    top: 3rem;
+    right: 4rem;
     transform: rotate(0deg);
   transition: transform 1s;
   z-index: 5;
@@ -234,8 +234,8 @@
 
 .network{
   background: transparent;
-  width: 4vw;
-  height: 4vw;
+  width: 4rem;
+  height: 4rem;
 }
 
 .socialItemContainer{
@@ -244,11 +244,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  width: 8vw;
-  height: 8vw;
+  width: 8rem;
+  height: 8rem;
   background-color: #1a1a1a;
-  top: 3.5vw;
-  right: 5.5vw;
+  top: 3.5rem;
+  right: 5.5rem;
 }
 
 .openCircle{
@@ -264,15 +264,15 @@
 
 .mobileMenu{
   display: block;
-  width: 35vw;
-  height: 48vw;
+  width: 35rem;
+  height: 48rem;
   background-color: rgba(0, 0, 0);
-  border-radius: 0 0 0 50vw;
+  border-radius: 0 0 0 50rem;
   z-index: 4;
 }
 
 .socialItemContainer > img{
-  width: 4vw;
-  height: 4vw;
+  width: 4rem;
+  height: 4rem;
 }
 }

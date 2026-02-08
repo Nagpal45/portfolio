@@ -3,6 +3,7 @@
 import Intro from "@/components/Homepage/intro";
 import { MotionDiv } from "@/components/ui/motion";
 import Info from "@/components/Homepage/info/info";
+import Experience from "@/components/Homepage/experience/experience";
 import Techstack from "@/components/Homepage/techstack/techstack";
 import Dice from "@/components/Homepage/dice/dice";
 
@@ -17,6 +18,7 @@ export default function Home() {
     >
       <Intro />
       <Info/>
+      <Experience/>
       <Techstack/>
       <Dice/>
     </MotionDiv>

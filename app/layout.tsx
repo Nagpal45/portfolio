@@ -29,10 +29,7 @@ export const BASE_URL = "https://vaibhavnagpal.tech";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: {
-    default: "Vaibhav Nagpal | Software Engineer & Full Stack Architect",
-    template: "%s | Vaibhav Nagpal",
-  },
+  title: "Vaibhav Nagpal | Software Engineer & Full Stack Architect",
   description:
     "Software Engineer specializing in pixel-perfect frontend architecture, cloud infrastructure and scalable full-stack systems. Expert in building AI-integrated SaaS, and real-time analytics engines with high-fidelity UX.",
   keywords: [

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import "./dice.css";
@@ -38,7 +40,7 @@ const Dice = () => {
   const [recommendation, setRecommendation] = useState("");
   const [submitIcon, setSubmitIcon] = useState("send");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const templateParams = {
@@ -75,7 +77,7 @@ const Dice = () => {
     large: 3000, 
   };
 
-  const getDeviceType = (width) => {
+  const getDeviceType = (width: number) => {
     if (width <= 1200) {
       return 'small'; 
     }else if (width <= 1400) {

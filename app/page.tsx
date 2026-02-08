@@ -18,7 +18,7 @@ export default function Home() {
       <Info/>
       <Experience/>
       <Techstack/>
-      {/* <Dice/> */}
+      <Dice/>
     </MotionDiv>
   );
 }

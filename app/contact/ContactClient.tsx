@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import "./contact.css";
 import emailjs from "@emailjs/browser";
-import { MotionDiv, MotionH1, MotionP, MotionForm, MotionPath } from "@/components/ui/motion";
+import { MotionDiv, MotionSection, MotionForm, MotionPath } from "@/components/ui/motion";
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -51,8 +51,11 @@ export function ContactForm() {
       <MotionForm
         ref={formRef}
         onSubmit={sendEmail}
+        aria-label="Contact Form"
       >
+        <label htmlFor="name" className="sr-only">Name</label>
         <input
+          id="name"
           type="text"
           required
           placeholder="Name"
@@ -62,7 +65,9 @@ export function ContactForm() {
             setFormData({ ...formData, name: e.target.value })
           }
         />
+        <label htmlFor="email" className="sr-only">Email</label>
         <input
+          id="email"
           type="email"
           required
           placeholder="Email"
@@ -72,7 +77,9 @@ export function ContactForm() {
             setFormData({ ...formData, email: e.target.value })
           }
         />
+        <label htmlFor="message" className="sr-only">Message</label>
         <textarea
+          id="message"
           rows={8}
           placeholder="Message"
           name="message"
@@ -85,6 +92,7 @@ export function ContactForm() {
           type="submit"
           style={{ background: emailSent ? "#CBC3E3" : "" }}
           className="text-black mr-3"
+          aria-label={emailSent ? "Message sent successfully" : "Send message"}
         >
           {emailSent ? "Thanks" : "Send"}
         </button>
@@ -95,7 +103,7 @@ export function ContactForm() {
 
 export function ContactWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <MotionDiv
+    <MotionSection
       className="contactContainer"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -103,7 +111,7 @@ export function ContactWrapper({ children }: { children: React.ReactNode }) {
       transition={{ duration: 0.5 }}
     >
       {children}
-    </MotionDiv>
+    </MotionSection>
   );
 }
 
@@ -114,8 +122,9 @@ export function PhoneSvg() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 1 }}
+      aria-hidden="true"
     >
-      <svg viewBox="0 0 64 64">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
         <MotionPath
           // strokeWidth={0.5}
           fill="none"

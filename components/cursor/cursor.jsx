@@ -23,6 +23,7 @@ const Cursor = () => {
     <motion.div
       className="cursor"
       animate={{ x: position.x+10, y: position.y+10 }}
+      aria-hidden="true"
     >
         <motion.div className="cursorInner" animate={{ scale: 2 }} />
     </motion.div>

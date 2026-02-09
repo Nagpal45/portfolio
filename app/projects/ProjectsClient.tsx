@@ -26,6 +26,9 @@ export function ImageSlider({ images }: { images: string[] }) {
   return (
     <div
       className="imageSlider"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Project screenshots"
       style={{
         position: "relative",
         width: "95%",
@@ -34,23 +37,31 @@ export function ImageSlider({ images }: { images: string[] }) {
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
       }}
     >
-      <Image
-        src={images[currentImageIndex]}
-        alt={`Codaborate Screenshot ${currentImageIndex + 1}`}
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          cursor: "pointer",
-          transition: "opacity 0.5s ease",
-        }}
-        width={800}
-        height={450}
-      />
+      <div 
+        role="group" 
+        aria-roledescription="slide" 
+        aria-label={`${currentImageIndex + 1} of ${images.length}`}
+        style={{ width: "100%", height: "100%" }}
+      >
+        <Image
+          src={images[currentImageIndex]}
+          alt={`Codaborate Screenshot ${currentImageIndex + 1}`}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            cursor: "pointer",
+            transition: "opacity 0.5s ease",
+          }}
+          width={800}
+          height={450}
+        />
+      </div>
 
       {/* Navigation Buttons */}
       <button
         onClick={prevImage}
+        aria-label="Previous image"
         style={{
           position: "absolute",
           left: "-30px",
@@ -80,12 +91,21 @@ export function ImageSlider({ images }: { images: string[] }) {
           e.currentTarget.style.background = "rgba(255, 255, 255, 0.8)";
           e.currentTarget.style.transform = "translateY(-50%) scale(1)";
         }}
+        onFocus={(e) => {
+           e.currentTarget.style.background = "rgba(255, 255, 255, 0.95)";
+           e.currentTarget.style.outline = "2px solid white";
+        }}
+        onBlur={(e) => {
+           e.currentTarget.style.background = "rgba(255, 255, 255, 0.8)";
+           e.currentTarget.style.outline = "none";
+        }}
       >
         ‹
       </button>
 
       <button
         onClick={nextImage}
+        aria-label="Next image"
         style={{
           position: "absolute",
           right: "-30px",
@@ -115,6 +135,14 @@ export function ImageSlider({ images }: { images: string[] }) {
           e.currentTarget.style.background = "rgba(255, 255, 255, 0.8)";
           e.currentTarget.style.transform = "translateY(-50%) scale(1)";
         }}
+        onFocus={(e) => {
+           e.currentTarget.style.background = "rgba(255, 255, 255, 0.95)";
+           e.currentTarget.style.outline = "2px solid white";
+        }}
+        onBlur={(e) => {
+           e.currentTarget.style.background = "rgba(255, 255, 255, 0.8)";
+           e.currentTarget.style.outline = "none";
+        }}
       >
         ›
       </button>
@@ -135,6 +163,8 @@ export function ImageSlider({ images }: { images: string[] }) {
           <button
             key={index}
             onClick={() => setCurrentImageIndex(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={currentImageIndex === index ? "true" : "false"}
             style={{
               width: "12px",
               height: "12px",

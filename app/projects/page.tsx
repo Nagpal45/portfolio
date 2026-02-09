@@ -1,6 +1,12 @@
 import Link from "next/link";
 import "./projects.css";
-import { MotionDiv, MotionP } from "@/components/ui/motion";
+import { 
+  MotionDiv, 
+  MotionSection, 
+  MotionArticle, 
+  MotionH2, 
+  MotionP 
+} from "@/components/ui/motion";
 import { Metadata } from "next";
 import { 
   ImageSlider,  
@@ -218,8 +224,10 @@ export default function Projects() {
   const featuredProject = projectsData[10];
   const otherProjects = projectsData.slice(0, 10);
 
+  const images = ["/1.png", "/2.png", "/3.png", "/4.png", "/5.png"];
+
   return (
-    <MotionDiv
+    <MotionSection
       className="projects"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -236,7 +244,7 @@ export default function Projects() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <p className="portfolioHeading">Portfolio</p>
+        <h1 className="portfolioHeading">Portfolio</h1>
         <p className="portfolioText">
           These projects highlight my skills, creativity, and passion for
           programming. Each project represents a unique journey of
@@ -245,17 +253,17 @@ export default function Projects() {
           crafted to make a positive impact.
         </p>
       </MotionDiv>
-      <MotionP
+      <MotionH2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         className="portfolioHeading projectHeading"
       >
         Latest Projects
-      </MotionP>
+      </MotionH2>
       
       {/* Latest Project: Codaborate */}
-      <MotionDiv
+      <MotionArticle
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
@@ -263,11 +271,11 @@ export default function Projects() {
         style={{ width: "90%" }}
       >
         <div className="projHead">
-          <p className="projTitle">{latestProject.title}</p>
+          <h3 className="projTitle">{latestProject.title}</h3>
           <div className="time">
-            <p className="timeText">
+            <time className="timeText">
               <span>•</span> {latestProject.status}
-            </p>
+            </time>
           </div>
         </div>
         <div className="projContent">
@@ -285,6 +293,7 @@ export default function Projects() {
               target="_blank"
               rel="noreferrer"
               className="knowMoreLink"
+              aria-label={`View code for ${latestProject.title}`}
             >
               View Code
             </a>
@@ -292,10 +301,10 @@ export default function Projects() {
         </div>
         
         <ImageSlider images={images} />
-      </MotionDiv>
+      </MotionArticle>
 
       {/* Featured Project: FlatQuest */}
-      <MotionDiv
+      <MotionArticle
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
@@ -303,11 +312,11 @@ export default function Projects() {
         style={{ width: "90%" }}
       >
         <div className="projHead">
-          <p className="projTitle">{featuredProject.title}</p>
+          <h3 className="projTitle">{featuredProject.title}</h3>
           <div className="time">
-            <p className="timeText">
+            <time className="timeText">
               <span>•</span> {featuredProject.status}
-            </p>
+            </time>
           </div>
         </div>
         <div className="projContent">
@@ -325,6 +334,7 @@ export default function Projects() {
               target="_blank"
               rel="noreferrer"
               className="knowMoreLink"
+              aria-label={`View code for ${featuredProject.title}`}
             >
               View Code
             </a>
@@ -332,12 +342,12 @@ export default function Projects() {
         </div>
         <iframe
           src="https://flat-quest.vercel.app/"
-          title="Recent Project"
+          title={`Preview of ${featuredProject.title}`}
           className="projectRecent"
         ></iframe>
-      </MotionDiv>
+      </MotionArticle>
 
-      <p className="portfolioHeading projectHeading">Other Projects</p>
+      <h2 className="portfolioHeading projectHeading">Other Projects</h2>
       <p className="videoPlayText">* Click on the video to play *</p>
       
       <MotionDiv
@@ -347,13 +357,13 @@ export default function Projects() {
         transition={{ duration: 0.5, delay: 0.7 }}
       >
         {otherProjects.map((project, index) => (
-          <div className={`project project${index + 1}`} key={index}>
+          <article className={`project project${index + 1}`} key={index}>
             <div className="projHead">
-              <p className="projTitle">{project.title}</p>
+              <h3 className="projTitle">{project.title}</h3>
               <div className="time">
-                <p className="timeText">
+                <time className="timeText">
                   <span>•</span> {project.status}
-                </p>
+                </time>
               </div>
             </div>
             <div className="projContent">
@@ -371,6 +381,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noreferrer"
                   className="knowMoreLink"
+                  aria-label={`View code for ${project.title}`}
                 >
                   View Code
                 </a>
@@ -379,7 +390,7 @@ export default function Projects() {
             {project.videoUrl && (
                 <ProjectVideo src={project.videoUrl} />
             )}
-          </div>
+          </article>
         ))}
       </MotionDiv>
       <div
@@ -408,6 +419,6 @@ export default function Projects() {
           </div>
         </div>
       </div>
-    </MotionDiv>
+    </MotionSection>
   );
 }

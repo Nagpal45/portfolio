@@ -39,8 +39,9 @@ export default function Contact() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
+        aria-hidden="true"
       >
-      <Image src="arrow2.png" alt="arrow" className="arrow2" width={100} height={100} />
+      <Image src="/arrow2.png" alt="" className="arrow2" width={100} height={100} />
       <p>Connect with me on social media.</p>
       
       <PhoneSvg />

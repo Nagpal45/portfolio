@@ -6,6 +6,7 @@ import { MotionSection, MotionDiv, MotionButton, MotionForm } from "@/components
 import "./dice.css";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
+import { sanitize } from "@/lib/sanitize";
 
 const Dice = () => {
   const controls = useAnimation();
@@ -46,7 +47,7 @@ const Dice = () => {
     e.preventDefault();
 
     const templateParams = {
-      recommendation: recommendation,
+      recommendation: sanitize(recommendation),
     };
 
     emailjs

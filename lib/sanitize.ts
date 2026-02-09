@@ -1,0 +1,14 @@
+import DOMPurify from 'isomorphic-dompurify';
+
+/**
+ * Sanitizes an HTML string to prevent XSS attacks.
+ * Uses dompurify to strip out dangerous tags and attributes.
+ * 
+ * @param content - The raw HTML string to sanitize
+ * @returns The sanitized HTML string
+ */
+export const sanitize = (content: string): string => {
+  return DOMPurify.sanitize(content, {
+    USE_PROFILES: { html: true },
+  });
+};

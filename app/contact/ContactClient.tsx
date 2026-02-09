@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import "./contact.css";
 import emailjs from "@emailjs/browser";
 import { MotionDiv, MotionSection, MotionForm, MotionPath } from "@/components/ui/motion";
+import { sanitize } from "@/lib/sanitize";
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -18,32 +19,36 @@ export function ContactForm() {
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (formRef.current) {
-      emailjs
-        .sendForm(
-          "service_umgfnxl",
-          "template_rsqrjbf",
-          formRef.current,
-          "KNX39YK9pURqdKVSX"
-        )
-        .then(
-          () => {
-            console.log("Email sent successfully");
-            setEmailSent(true);
-            setFormData({
-              name: "",
-              email: "",
-              message: "",
-            });
-            setTimeout(() => {
-              setEmailSent(false);
-            }, 1000);
-          },
-          (error) => {
-            console.log(error);
-          }
-        );
-    }
+    const templateParams = {
+      name: sanitize(formData.name),
+      email: sanitize(formData.email),
+      message: sanitize(formData.message),
+    };
+
+    emailjs
+      .send(
+        "service_umgfnxl",
+        "template_rsqrjbf",
+        templateParams,
+        "KNX39YK9pURqdKVSX"
+      )
+      .then(
+        () => {
+          console.log("Email sent successfully");
+          setEmailSent(true);
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+          setTimeout(() => {
+            setEmailSent(false);
+          }, 1000);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   };
 
   return (

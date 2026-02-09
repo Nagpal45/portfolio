@@ -214,7 +214,9 @@ export default function RootLayout({
         <LazyMotion features={domAnimation}>
           <Cursor />
           <Navbar />
-          {children}
+          <main id="main-content" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            {children}
+          </main>
           <Footer />
         </LazyMotion>
       </body>

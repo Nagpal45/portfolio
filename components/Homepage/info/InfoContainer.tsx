@@ -71,7 +71,7 @@ function Card(props: CardProps) {
   }
 
   return (
-    <m.div
+    <m.article
       style={{ backgroundColor: props.backgroundColor }}
       className="card"
       whileTap={{ cursor: "grabbing" }}
@@ -88,6 +88,8 @@ function Card(props: CardProps) {
           ? { type: "spring", stiffness: 300, damping: 20 }
           : { scale: { duration: 0.2 }, opacity: { duration: 0.4 } }
       }
+      aria-hidden={!props.frontCard}
+      tabIndex={props.frontCard ? 0 : -1} 
     >
       <m.div className="card-content">
         {props.cardContents[props.index % props.cardContents.length]}
@@ -98,28 +100,35 @@ function Card(props: CardProps) {
             animate="animate"
             initial="initial"
           >
-            <Image
-              src="/next.png"
-              alt="drag"
-              className="dragIcon"
-              onClick={() => {
+            <button
+               onClick={() => {
                 setExitX(-250);
                 setX(-250);
                 setRotate(-20);
                 setScale(0.8);
                 props.setIndex(props.index + 1);
               }}
-              width={50}
-              height={50}
-              loading="lazy"
-            />
-            <m.div className="tooltip">
+              className="nextButton"
+              aria-label="Next card"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+            >
+              <Image
+                src="/next.png"
+                alt=""
+                className="dragIcon"
+                width={50}
+                height={50}
+                loading="lazy"
+                aria-hidden="true"
+              />
+            </button>
+            <m.div className="tooltip" aria-hidden="true">
               <p>{props.tooltips[props.index % props.tooltips.length]}</p>
             </m.div>
           </m.div>
         )}
       </m.div>
-    </m.div>
+    </m.article>
   );
 }
 
@@ -203,18 +212,19 @@ export default function InfoContainer({
   }, [index]);
 
   return (
-    <m.div
+    <m.section
       className="info"
       variants={infoVariants}
       initial="hidden"
       animate={animateInfo ? "visible" : "hidden"}
+      aria-label="About Me"
     >
-      <m.div className="emoContainer">
+      <m.div className="emoContainer" aria-hidden="true">
         <m.img
           key={key}
           className="infoImg"
           src={images[index % images.length]}
-          alt="logo"
+          alt=""
           animate={{
             scale: [1, 1.1, 1.1, 1, 1],
           }}
@@ -244,6 +254,6 @@ export default function InfoContainer({
           />
         </AnimatePresence>
       </m.div>
-    </m.div>
+    </m.section>
   );
 }

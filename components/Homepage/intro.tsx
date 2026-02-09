@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MotionDiv, MotionImg, MotionP } from "@/components/ui/motion";
+import { MotionDiv, MotionImg, MotionP, MotionSection, MotionH1, MotionH2 } from "@/components/ui/motion";
 import DownloadResumeButton from "../ui/DownloadResumeButton";
 import "./intro.css";
 
@@ -43,21 +43,21 @@ export default function Intro() {
   
 
   return (
-    <MotionDiv className="intro" initial="initial" animate="animate">
-      <MotionDiv className="main" >
-        <div className="left">
-          <MotionDiv className="headline" >
-            <MotionP className="name" variants={textVariants}>
+    <MotionSection className="intro" initial="initial" animate="animate" aria-label="Introduction">
+      <div className="main">
+        <header className="left">
+          <MotionDiv className="headline">
+            <MotionH1 className="name" variants={textVariants}>
               Hi. <br />
               I&apos;m Vaibhav.
-            </MotionP>
+            </MotionH1>
             <MotionDiv className="details" variants={detailVariants}>
-              <MotionP className="detail" >
+              <MotionH2 className="detail">
                 <u>Software</u> Engineer
-              </MotionP>
-              <MotionP className="detail">
+              </MotionH2>
+              <MotionH2 className="detail">
                 Building <u>Scalable Full-Stack Systems</u>
-              </MotionP>
+              </MotionH2>
             </MotionDiv>
           </MotionDiv>
           <div className="introButtons">
@@ -71,16 +71,14 @@ export default function Intro() {
               className="Navbutton"
               variants={buttonVariants}
             >
-            <Link href="/contact">
-              <div className="downloadResume">
-                <div className="contact">Contact me</div>
-              </div>
-            </Link>
+              <Link href="/contact" className="downloadResume" aria-label="Contact Me">
+                <span className="contact">Contact me</span>
+              </Link>
             </MotionDiv>
           </div>
-        </div>
+        </header>
         <div className="right">
-          <div className="top">
+          <div className="top" aria-hidden="true">
             <MotionDiv className="squaresA" variants={sqcontVariants}>
               <MotionDiv
                 className="square1"
@@ -96,14 +94,14 @@ export default function Intro() {
             <MotionImg
               className="image"
               src="/Me.jpeg"
-              alt="Vaibhav Nagpal"
+              alt="Portrait of Vaibhav Nagpal"
               variants={imageVariants}
               width={300}
               height={300}
               fetchPriority="high"
             />
           </div>
-          <div className="bottom">
+          <div className="bottom" aria-hidden="true">
             <MotionDiv className="squaresB" variants={sqcontVariants}>
               <MotionDiv
                 className="square2"
@@ -116,7 +114,7 @@ export default function Intro() {
             </MotionDiv>
           </div>
         </div>
-      </MotionDiv>
-    </MotionDiv>
+      </div>
+    </MotionSection>
   );
 }

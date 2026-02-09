@@ -12,6 +12,18 @@ const images = [
   "/communications.png",
 ];
 
+const srOnlyStyle: React.CSSProperties = {
+  position: 'absolute',
+  width: '1px',
+  height: '1px',
+  padding: 0,
+  margin: '-1px',
+  overflow: 'hidden',
+  clip: 'rect(0, 0, 0, 0)',
+  whiteSpace: 'nowrap',
+  borderWidth: 0,
+};
+
 export default function Info() {
   return (
     <InfoContainer
@@ -31,6 +43,7 @@ export default function Info() {
           flexDirection: "column",
         }}
       >
+        <h3 style={srOnlyStyle}>About Me</h3>
         <p
           style={{
             width: "100%",
@@ -57,7 +70,7 @@ export default function Info() {
         >
           <Image
             src="coder.png"
-            alt="coder"
+            alt="Coder illustration"
             style={{
               background: "Transparent",
               width: "4.5vw",
@@ -74,20 +87,24 @@ export default function Info() {
 
       {/* 2. Education */}
       <ul key="2" style={{ marginBottom: "10vw" }}>
+        <li className="sr-only">Education</li>
+        {/* University */}
         <li style={{ fontWeight: "700" }} className="schoolHead">
-          Jaypee Institute of Information Technology
+           Jaypee Institute of Information Technology
         </li>
         <li>B.Tech, Computer Science & Engineering</li>
-        <li>2025</li>
+        <li><time>2025</time></li>
         <li style={{ color: "#5A5A5A" }} className="schoolInfo">
           I explored many fields of technology here ranging from C and C++
           programming to glimpse of Machine Learning.
         </li>
+
+        {/* High School */}
         <li style={{ fontWeight: "700" }} className="schoolHead2">
           Gitarattan Jindal Public School
         </li>
         <li>High School, CBSE</li>
-        <li>2021</li>
+        <li><time>2021</time></li>
         <li style={{ color: "#5A5A5A" }} className="schoolInfo">
           My tech journey started here, I was introduced with HTML, CSS, JS and
           Python.
@@ -110,6 +127,7 @@ export default function Info() {
           flexDirection: "column",
         }}
       >
+        <h3 style={srOnlyStyle}>Hometown</h3>
         <p
           style={{
             width: "100%",
@@ -137,7 +155,7 @@ export default function Info() {
         >
           <Image
             src="red-fort.png"
-            alt="red fort"
+            alt="Red Fort illustration"
             style={{
               background: "Transparent",
               width: "4vw",
@@ -151,7 +169,7 @@ export default function Info() {
           />
           <Image
             src="indiaGate.png"
-            alt=""
+            alt="India Gate illustration"
             style={{
               background: "Transparent",
               width: "4vw",
@@ -177,6 +195,7 @@ export default function Info() {
           flexDirection: "column",
         }}
       >
+         <h3 style={srOnlyStyle}>Languages</h3>
         <p
           style={{
             width: "100%",
@@ -202,7 +221,7 @@ export default function Info() {
         >
           <Image
             src="english.png"
-            alt="english"
+            alt="English language icon"
             style={{
               background: "Transparent",
               width: "4vw",
@@ -215,7 +234,7 @@ export default function Info() {
           />
           <Image
             src="hindi.png"
-            alt="hindi"
+            alt="Hindi language icon"
             style={{
               background: "Transparent",
               width: "4vw",

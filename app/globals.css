@@ -39,3 +39,106 @@ body {
 
   -webkit-tap-highlight-color: transparent;
 }
+
+@media print {
+  :root {
+    --background: #ffffff !important;
+    --foreground: #000000 !important;
+    --color-background: #ffffff !important;
+    --color-foreground: #000000 !important;
+  }
+
+  /* Force reset of all Framer Motion opacity/transforms */
+  * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    overflow: visible !important;
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Hide navigational and interactive elements */
+  .navbar,
+  .footer,
+  .cursor,
+  .downloadResume,
+  .dicePath,
+  .diceImg,
+  .scroll-down-indicator,
+  button {
+    display: none !important;
+  }
+
+  /* Reset page background and text colors for printing */
+  body, html {
+    background-color: white !important;
+    background: white !important;
+    color: black !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure text is legible */
+  p, h1, h2, h3, h4, h5, h6, span, a, li, div {
+    color: black !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure full width for content */
+  main, section, .container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important; 
+  }
+
+  /* Force block layout and auto height on visible content */
+  body * {
+    visibility: visible !important;
+    float: none !important;
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Specific override to keep scripts and styles hidden (specificity battle) */
+  script, style, head, noscript, template, meta, link, title {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  /* Reset display for elements we actually want to see (excluding hidden tags) */
+  body *:not(script):not(style):not(noscript):not(template) {
+    display: block !important;
+  }
+
+  /* Re-enable inline elements that shouldn't be blocks (like span, a, img) */
+
+  /* Re-enable inline elements that shouldn't be blocks (like span, a, img) */
+  span, a, strong, b, i, em, mark, code, label {
+    display: inline !important;
+  }
+  img, svg {
+    display: inline-block !important;
+  }
+  
+  /* Hide navigational elements again (specificity needs to be high) */
+  .navbar,
+  .footer,
+  .cursor,
+  .downloadResume,
+  .dicePath,
+  .diceImg,
+  .scroll-down-indicator,
+  button {
+    display: none !important;
+  }
+}

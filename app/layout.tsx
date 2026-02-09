@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     google: "UfnEtMLCEnGXSk1h2un3njxclhlNeX3zaLMgkSywSu0",
   },
   alternates: {
-    canonical: BASE_URL,
+    canonical: "./",
   },
 };
 

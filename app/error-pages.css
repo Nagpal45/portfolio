@@ -1,0 +1,102 @@
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: var(--font-quicksand), sans-serif;
+}
+
+.errorCode {
+  font-size: 12vw;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  background: -webkit-linear-gradient(0deg, #feed8a, #fd9fd9, #a849fb, #c6eafc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: moveGradient 5s ease infinite;
+  font-family: var(--font-rubik), sans-serif;
+  cursor: default;
+}
+
+.errorMessage {
+  font-size: 1.5vw;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+  width: 50%;
+  color: #e0e0e0;
+}
+
+.homeButton {
+  padding: 0.8vw 2vw;
+  font-size: 1.1vw;
+  border-radius: 2vw;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.homeButton:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1.5vw;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 1100px) {
+  .errorCode {
+    font-size: 15vw;
+  }
+  .errorMessage {
+    font-size: 2.5vw;
+    width: 80%;
+  }
+  .homeButton {
+    padding: 1.5vw 3vw;
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .errorContainer {
+    height: 60vh;
+  }
+  .errorCode {
+    font-size: 25vw;
+  }
+  .errorMessage {
+    font-size: 4.5vw;
+    width: 90%;
+    margin-bottom: 8vw;
+  }
+  .homeButton {
+    padding: 3vw 8vw;
+    font-size: 4.5vw;
+    border-radius: 5vw;
+  }
+  .buttonGroup {
+    flex-direction: column;
+    gap: 4vw;
+  }
+}

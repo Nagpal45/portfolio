@@ -33,6 +33,7 @@ const nextConfig: NextConfig = {
               "script-src 'self' 'unsafe-eval' 'unsafe-inline';",
               "style-src 'self' 'unsafe-inline';",
               "img-src 'self' blob: data: https://cdn.builder.io;",
+              "media-src 'self' https://cdn.builder.io;",
               "font-src 'self';",
               "connect-src 'self' https://api.emailjs.com;",
               "frame-src 'self' https://flat-quest.vercel.app;",

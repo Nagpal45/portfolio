@@ -3,7 +3,8 @@ import { MotionDiv } from "@/components/ui/motion";
 import Info from "@/components/Homepage/info/info";
 import Experience from "@/components/Homepage/experience/experience";
 import Techstack from "@/components/Homepage/techstack/techstack";
-import Dice from "@/components/Homepage/dice/dice";
+import dynamic from "next/dynamic";
+const Dice = dynamic(() => import("@/components/Homepage/dice/dice"));
 
 export default function Home() {
   return (

@@ -4,7 +4,8 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
-    '/about',
+    '/projects',
+    '/contact',
   ].map((route) => ({
     url: `https://vaibhavnagpal.tech${route}`,
     lastModified: new Date(),

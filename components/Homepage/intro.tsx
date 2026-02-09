@@ -93,7 +93,7 @@ export default function Intro() {
           <div className="center">
             <MotionImg
               className="image"
-              src="/Me.jpeg"
+              src="/Me2.jpeg"
               alt="Portrait of Vaibhav Nagpal"
               variants={imageVariants}
               width={300}

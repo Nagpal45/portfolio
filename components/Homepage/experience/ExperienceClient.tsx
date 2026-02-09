@@ -41,6 +41,7 @@ export function ExperienceContainer({ children }: { children: React.ReactNode })
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
+        aria-label="Work Experience History"
       >
         {children}
       </m.section>
@@ -52,7 +53,7 @@ export function ExperienceTimeline({ count }: { count: number }) {
   const { timelineProgress, activeIndex } = useExperienceContext();
 
   return (
-    <div className="timeline-container">
+    <div className="timeline-container" aria-hidden="true">
       <div className="timeline-track">
         <m.div className="timeline-progress" style={{ height: timelineProgress }} />
         {Array.from({ length: count }).map((_, index) => (
@@ -81,7 +82,7 @@ export function ExperienceViewportSpy({
   const { setActiveIndex } = useExperienceContext();
 
   return (
-    <m.div
+    <m.article
         className="experience-item"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -90,6 +91,6 @@ export function ExperienceViewportSpy({
         onViewportEnter={() => setActiveIndex(index)}
     >
       {children}
-    </m.div>
+    </m.article>
   );
 }

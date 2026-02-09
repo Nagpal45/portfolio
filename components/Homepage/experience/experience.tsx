@@ -11,7 +11,8 @@ import {
   MotionH3, 
   MotionA, 
   MotionUl, 
-  MotionLi 
+  MotionLi,
+  MotionTime 
 } from "@/components/ui/motion";
 
 interface ExperienceItem {
@@ -93,15 +94,16 @@ export default function Experience() {
                   <div className="experience-info">
                     <div className="experience-content">
                       <div className="experience-text">
-                        <MotionDiv
+                        <MotionTime
                           className="experience-date"
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           transition={{ delay: 0.3 }}
                           viewport={{ once: true }}
+                          dateTime={item.date} // Best effort, or use a simplified YYYY-MM format if available
                         >
                           {item.date}
-                        </MotionDiv>
+                        </MotionTime>
                         
                         <MotionH3
                           className="experience-job-title"

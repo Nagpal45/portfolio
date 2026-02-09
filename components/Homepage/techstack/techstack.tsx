@@ -110,7 +110,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Languages</div>
+        <h3 className="centered-text">Languages</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -126,7 +126,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain', padding: '10%' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -138,7 +138,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Frontend & UI</div>
+        <h3 className="centered-text">Frontend & UI</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -149,12 +149,12 @@ export default function Techstack() {
       >
         {webSkills[1].map((skill, i) => (
           <MotionDiv
-            style={{ background: "#fcf8e2" }}
+            style={{ background: "#fcf8e2"}}
             className="skill"
             key={i}
             variants={skillVariants}
           >
-            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain', padding: '10%' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -166,7 +166,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Backend & Cloud/DevOps</div>
+        <h3 className="centered-text">Backend & Cloud/DevOps</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -182,7 +182,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain', padding: '10%' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -199,7 +199,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Languages</div>
+        <h3 className="centered-text">Languages</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -215,7 +215,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain', padding: '10%' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -227,7 +227,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Libraries</div>
+        <h3 className="centered-text">Libraries</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -243,7 +243,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain', padding: '10%' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -255,7 +255,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Tools</div>
+        <h3 className="centered-text">Tools</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -271,7 +271,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain', padding: '10%' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -288,7 +288,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Core Computer Science</div>
+        <h3 className="centered-text">Core Computer Science</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -317,7 +317,7 @@ export default function Techstack() {
         transition={lineContainerTransition}
       >
         <div className="gray-line"></div>
-        <div className="centered-text">Interpersonal Skills</div>
+        <h3 className="centered-text">Interpersonal Skills</h3>
         <div className="gray-line"></div>
       </MotionDiv>
       <MotionDiv
@@ -345,14 +345,14 @@ export default function Techstack() {
   return (
     <TechstackContainer>
       <div className="techHeading">
-        <div className="skillsHeading">Skill Set</div>
-        <div className="skillsText">
+        <h2 className="skillsHeading">Skill Set</h2>
+        <p className="skillsText">
           The technical abilities, combined with my strong interpersonal skills,
           enable me to not only create innovative digital solutions but also
           collaborate effectively within a team. Explore the various dimensions
           of my skillset below, and let&apos;s embark on a journey where
           technology and human connection converge to create impactful results.
-        </div>
+        </p>
       </div>
       
       <TechstackTabs 
@@ -362,11 +362,11 @@ export default function Techstack() {
       />
 
       <div className="viewProjects">
-        <div className="viewProjectsText">
+        <p className="viewProjectsText">
           I&apos;ve put my skills to the test in a variety of exciting projects. Dive
           into my portfolio to explore what I&apos;ve created and how I&apos;ve harnessed
           my expertise.
-        </div>
+        </p>
         <div className="viewProjectsButton">
           <div className="Navbutton">
             <ProjectLink />

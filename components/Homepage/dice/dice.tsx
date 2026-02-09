@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { MotionSection, MotionDiv, MotionButton, MotionForm } from "@/components/ui/motion";
 import "./dice.css";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
@@ -133,18 +134,24 @@ const Dice = () => {
   };
 
   return (
-    <motion.div className="diceWrapper" variants={diceVariants} initial="hidden" animate={animateDice ? "visible" : "hidden"}>
+    <MotionSection 
+      className="diceWrapper" 
+      variants={diceVariants} 
+      initial="hidden" 
+      animate={animateDice ? "visible" : "hidden"}
+      aria-label="Personal Interests"
+    >
       <div className="diceHeading">
-        <div className="interestHeading">Personal Interests</div>
-        <div className="interestText">
+        <h2 className="interestHeading">Personal Interests</h2>
+        <p className="interestText">
           While I&apos;m passionate about software development, I believe that a
           well-rounded life outside of code is essential for maintaining
           creativity and balance. Here, I&apos;d like to share how my interests enrich my professional life.
-        </div>
+        </p>
       </div>
       {isLeft ? (
         <div key="left" className="Texts">
-          <motion.div
+          <MotionDiv
             className="diceText"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -153,28 +160,28 @@ const Dice = () => {
             <div className="music">
               <div className="spotify">
                 <div className="rectangle">
-                  <motion.div className="spLogo" animate={{scale: 1.2}} transition={{duration: 0.7, repeat: Infinity, repeatType: "reverse"}}>
-                    <a href="https://open.spotify.com/user/31mferjcwy33ijsfznga4shrn3bi?si=9e82f68969ce497b">
+                  <MotionDiv className="spLogo" animate={{scale: 1.2}} transition={{duration: 0.7, repeat: Infinity, repeatType: "reverse"}}>
+                    <a href="https://open.spotify.com/user/31mferjcwy33ijsfznga4shrn3bi?si=9e82f68969ce497b" aria-label="Visit my Spotify Profile">
                       <Image
                         src="spotify.png"
-                        alt="spotify"
+                        alt=""
                         className="spotifyLogo"
                         loading="lazy"
                         width={50}
                         height={50}
                       />
                     </a>
-                  </motion.div>
+                  </MotionDiv>
                   <div className="spotifySong">
                     <div className="songName">Now Playing</div>
                     <div className="songArtist">Love Yourz by J.Cole</div>
                   </div>
-                  <div className="playButtons">
-                    <Image src="previous.png" className="skipPrevious" loading="lazy" alt="previous" width={30} height={30} />
-                    <Image src="pause.png" className="pause" loading="lazy" alt="pause" width={30} height={30} />
-                    <Image src = "playNext.png" className="skipNext" loading="lazy" alt="next" width={30} height={30} />
+                  <div className="playButtons" aria-hidden="true">
+                    <Image src="previous.png" className="skipPrevious" loading="lazy" alt="" width={30} height={30} />
+                    <Image src="pause.png" className="pause" loading="lazy" alt="" width={30} height={30} />
+                    <Image src = "playNext.png" className="skipNext" loading="lazy" alt="" width={30} height={30} />
                   </div>
-                  <Image src="arrow.png" alt="arrow" className="arrow" loading="lazy" width={100} height={100} />
+                  <Image src="arrow.png" alt="" className="arrow" loading="lazy" width={100} height={100} aria-hidden="true" />
                   <p className="openSpotify">
                     If you listen to genres like Hip-Hop, Rock, R&B and Pop in
                     English, Punjabi and Hindi, Checkout my profile.
@@ -193,11 +200,11 @@ const Dice = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       ) : (
         <div key="right" className="Texts">
-          <motion.div
+          <MotionDiv
             className="diceText"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -205,25 +212,27 @@ const Dice = () => {
           >
             <div className="music">
               <div className="spotify">
-                <motion.img src="books.png" alt="book" className="book" initial={{ y: 0}} animate={{y: 10}}
+                <motion.img src="books.png" alt="" className="book" initial={{ y: 0}} animate={{y: 10}}
                 transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-                ></motion.img>
-                <form onSubmit={handleSubmit} className="recommendForm">
+                aria-hidden="true"></motion.img>
+                <MotionForm onSubmit={handleSubmit} className="recommendForm">
+                  <label htmlFor="book-recommendation" className="sr-only">Recommend a good non-fiction book</label>
                   <input
+                    id="book-recommendation"
                     type="text"
                     className="recommendation"
                     placeholder="Recommend a good non-fiction book"
                     value={recommendation}
                     onChange={(e) => setRecommendation(e.target.value)}
                   />
-                  <motion.button type="submit" className="submit" transition={{ duration: 2 }}>
+                  <MotionButton type="submit" className="submit" transition={{ duration: 2 }} aria-label="Submit Recommendation">
                     {submitIcon === "check" ? (
-                      <Image src="thanks.png" className="submitThanks" loading="lazy" alt="thanks" width={30} height={30} />
+                      <Image src="thanks.png" className="submitThanks" loading="lazy" alt="Thanks" width={30} height={30} />
                     ) : (
-                      <Image src ="send.png" className="submitSend" loading="lazy" alt="send" width={30} height={30} />
+                      <Image src ="send.png" className="submitSend" loading="lazy" alt="Send" width={30} height={30} />
                     )}
-                  </motion.button>
-                </form>
+                  </MotionButton>
+                </MotionForm>
               </div>
               <div className="musicText">
                 <p className="readInfo">
@@ -239,22 +248,24 @@ const Dice = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         </div>
       )}
-      <div className="dicePath">
-        <motion.div
+      <div className="dicePath" aria-hidden="true">
+        <MotionButton
           initial={{ x: 0, opacity: 0, rotate: 0 }}
           animate={controls}
           transition={{ duration: 8 }}
           className={isDiceStopped ? "dice diceStopped" : "dice"}
           onClick={handleClick}
+          aria-label={isDiceStopped ? "Start Dice Animation" : "Stop Dice Animation"}
+          tabIndex={-1}
         >
-        </motion.div>
+        </MotionButton>
           <p className="stopText">Click the box to stop</p>
-          <Image src="click.png" alt="dice" className="diceImg" loading="lazy" width={50} height={50} />
+          <Image src="click.png" alt="" className="diceImg" loading="lazy" width={50} height={50} aria-hidden="true" />
       </div>
-    </motion.div>
+    </MotionSection>
   );
 };
 

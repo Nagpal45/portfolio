@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MotionDiv } from "@/components/ui/motion";
+import { MotionDiv, MotionSection } from "@/components/ui/motion";
 import Link from "next/link";
 import "./techstack.css";
 
@@ -68,14 +68,15 @@ export function TechstackContainer({ children }: TechstackContainerProps) {
   };
 
   return (
-    <MotionDiv
+    <MotionSection
       className="techStack"
       variants={techVariants}
       initial="hidden"
       animate={animateTech ? "visible" : "hidden"}
+      aria-label="Technical Skills"
     >
       {children}
-    </MotionDiv>
+    </MotionSection>
   );
 }
 
@@ -92,41 +93,72 @@ export function TechstackTabs({
 }: TechstackTabsProps) {
   const [selectedCategory, setSelectedCategory] = useState("webSkills");
 
+  const handleKeyDown = (e: React.KeyboardEvent, category: string) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setSelectedCategory(category);
+    }
+  };
+
   return (
     <div className="techstackWrapper">
-      <div className="skillssection">
+      <div 
+        className="skillssection"
+        role="tabpanel"
+        id="techstack-panel"
+        aria-labelledby={`${selectedCategory}-tab`}
+        tabIndex={0}
+      >
         {selectedCategory === "webSkills" && webContent}
         {selectedCategory === "dataSkills" && dataContent}
         {selectedCategory === "otherSkills" && otherContent}
       </div>
       <div className="category">
-        <ul>
+        <ul role="tablist" aria-label="Tech Stack Categories">
           <li
             style={{ "--i": 3 } as React.CSSProperties}
             onClick={() => setSelectedCategory("webSkills")}
+            onKeyDown={(e) => handleKeyDown(e, "webSkills")}
             className={
               selectedCategory === "webSkills" ? "activeWeb Web" : "Web"
             }
+            role="tab"
+            aria-selected={selectedCategory === "webSkills"}
+            aria-controls="techstack-panel"
+            id="webSkills-tab"
+            tabIndex={0}
           >
             Development
           </li>
           <li
             style={{ "--i": 2 } as React.CSSProperties}
             onClick={() => setSelectedCategory("dataSkills")}
+            onKeyDown={(e) => handleKeyDown(e, "dataSkills")}
             className={
               selectedCategory === "dataSkills" ? "activeData Data" : "Data"
             }
+            role="tab"
+            aria-selected={selectedCategory === "dataSkills"}
+            aria-controls="techstack-panel"
+            id="dataSkills-tab"
+            tabIndex={0}
           >
             Data Science
           </li>
           <li
             style={{ "--i": 1 } as React.CSSProperties}
             onClick={() => setSelectedCategory("otherSkills")}
+            onKeyDown={(e) => handleKeyDown(e, "otherSkills")}
             className={
               selectedCategory === "otherSkills"
                 ? "activeOther Other"
                 : "Other"
             }
+            role="tab"
+            aria-selected={selectedCategory === "otherSkills"}
+            aria-controls="techstack-panel"
+            id="otherSkills-tab"
+            tabIndex={0}
           >
             Others
           </li>

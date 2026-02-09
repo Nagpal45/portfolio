@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import "./navbar.css";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -112,7 +113,7 @@ export default function Navbar() {
       </AnimatePresence>
 
           <div className={socialOpen ? "socialCircle openCircle": "socialCircle"} onClick={() => setSocialOpen(!socialOpen)}>
-            <img src="network.png" className="network"/>
+            <Image src="network.png" className="network" alt="network" width={20} height={20} />
           </div>
         <div className="socialItems">
           <motion.a
@@ -122,7 +123,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src="github.png" className="socialItem git" />
+            <Image src="github.png" className="socialItem git" alt="github" width={20} height={20} />
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/vaibhav249/"
@@ -131,7 +132,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src="linkedin.png" className="socialItem linked" />
+            <Image src="linkedin.png" className="socialItem linked" alt="linkedin" width={20} height={20} />
           </motion.a>
           <motion.a
             href="https://www.instagram.com/okvaibhav/?hl=en"
@@ -140,7 +141,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src="instagram.png" className="socialItem insta" />
+            <Image src="instagram.png" className="socialItem insta" alt="instagram" width={20} height={20} />
           </motion.a>
           <motion.a
             href="mailto:vaibhavnagpal.dev@gmail.com"
@@ -149,7 +150,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src="email.png" className="socialItem" />
+            <Image src="email.png" className="socialItem" alt="email" width={20} height={20} />
           </motion.a>
         </div>
         <AnimatePresence>
@@ -170,7 +171,7 @@ export default function Navbar() {
             exit={{ opacity: 0, x: 0 , y:0}}
             transition={{ duration: 0.5 }}
           >
-            <img src="github.png" className="socialItem git" />
+            <Image src="github.png" className="socialItem git" alt="github" width={20} height={20} />
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/vaibhav249/"
@@ -182,7 +183,7 @@ export default function Navbar() {
             exit={{ opacity: 0, x: 0 , y:0}}
             transition={{ duration: 0.5 }}
           >
-            <img src="linkedin.png" className="socialItem linked" />
+            <Image src="linkedin.png" className="socialItem linked" alt="linkedin" width={20} height={20} />
           </motion.a>
           <motion.a
             href="https://www.instagram.com/okvaibhav/?hl=en"
@@ -194,7 +195,7 @@ export default function Navbar() {
             exit={{ opacity: 0, x: 0 , y:0}}
             transition={{ duration: 0.5 }}
           >
-            <img src="instagram.png" className="socialItem insta" />
+            <Image src="instagram.png" className="socialItem insta" alt="instagram" width={20} height={20} />
           </motion.a>
           <motion.a
             href="mailto:vaibhavnagpal.dev@gmail.com"
@@ -206,7 +207,7 @@ export default function Navbar() {
             exit={{ opacity: 0, x: 0 , y:0}}
             transition={{ duration: 0.5 }}
           >
-            <img src="email.png" className="socialItem" />
+            <Image src="email.png" className="socialItem" alt="email" width={20} height={20} />
           </motion.a>
         </motion.div>
       )}

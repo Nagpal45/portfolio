@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./experience.css";
 import { 
   ExperienceContainer, 
@@ -164,7 +165,7 @@ export default function Experience() {
                             }}
                             whileTap={{ scale: 0.95 }}
                           >
-                          <img src={item.image.src} alt={item.image.alt} />
+                          <Image src={item.image.src} alt={item.image.alt} width={300} height={200} className="experience-image" />
                         </MotionA>
                       )}
                     </div>

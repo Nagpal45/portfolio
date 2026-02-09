@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./techstack.css";
 import { 
   TechstackContainer, 
@@ -125,7 +126,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <img src={skill.logo} alt={skill.name} loading="lazy" />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -153,7 +154,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <img src={skill.logo} alt={skill.name} loading="lazy" />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -181,7 +182,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <img src={skill.logo} alt={skill.name} loading="lazy" />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -214,7 +215,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <img src={skill.logo} alt={skill.name} loading="lazy" />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -242,7 +243,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <img src={skill.logo} alt={skill.name} loading="lazy" />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}
@@ -270,7 +271,7 @@ export default function Techstack() {
             key={i}
             variants={skillVariants}
           >
-            <img src={skill.logo} alt={skill.name} loading="lazy" />
+            <Image src={`/${skill.logo}`} alt={skill.name} loading="lazy" fill style={{ objectFit: 'contain' }} />
             <div className="skillNameOnHover">{skill.name}</div>
           </MotionDiv>
         ))}

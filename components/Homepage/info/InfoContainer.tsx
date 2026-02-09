@@ -3,6 +3,7 @@
 import "./info.css";
 import React, { useEffect, useState } from "react";
 import { m, AnimatePresence, PanInfo } from "framer-motion";
+import Image from "next/image";
 
 const dragVariants = {
   initial: {
@@ -97,7 +98,7 @@ function Card(props: CardProps) {
             animate="animate"
             initial="initial"
           >
-            <img
+            <Image
               src="/next.png"
               alt="drag"
               className="dragIcon"
@@ -108,6 +109,8 @@ function Card(props: CardProps) {
                 setScale(0.8);
                 props.setIndex(props.index + 1);
               }}
+              width={50}
+              height={50}
               loading="lazy"
             />
             <m.div className="tooltip">

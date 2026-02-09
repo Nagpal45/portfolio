@@ -96,8 +96,11 @@ export default function Intro() {
             <MotionImg
               className="image"
               src="/Me.jpeg"
-              alt=""
+              alt="Vaibhav Nagpal"
               variants={imageVariants}
+              width={300}
+              height={300}
+              fetchPriority="high"
             />
           </div>
           <div className="bottom">

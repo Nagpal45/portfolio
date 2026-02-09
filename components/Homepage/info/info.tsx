@@ -1,3 +1,4 @@
+import Image from "next/image";
 import InfoContainer from "./InfoContainer";
 
 const tooltips = ["Education", "Hometown", "Languages", "Techie"];
@@ -54,9 +55,9 @@ export default function Info() {
             marginRight: "1vw",
           }}
         >
-          <img
+          <Image
             src="coder.png"
-            alt=""
+            alt="coder"
             style={{
               background: "Transparent",
               width: "4.5vw",
@@ -64,6 +65,8 @@ export default function Info() {
               marginTop: "3vw",
               marginLeft: "2vw",
             }}
+            width={50}
+            height={50}
             loading="lazy"
           />
         </div>
@@ -132,9 +135,9 @@ export default function Info() {
             marginTop: "0.5vw",
           }}
         >
-          <img
+          <Image
             src="red-fort.png"
-            alt=""
+            alt="red fort"
             style={{
               background: "Transparent",
               width: "4vw",
@@ -142,9 +145,11 @@ export default function Info() {
               marginTop: "3vw",
               marginRight: "3vw",
             }}
+            width={50}
+            height={50}
             loading="lazy"
           />
-          <img
+          <Image
             src="indiaGate.png"
             alt=""
             style={{
@@ -153,6 +158,8 @@ export default function Info() {
               height: "4vw",
               marginTop: "3vw",
             }}
+            width={50}
+            height={50}
             loading="lazy"
           />
         </div>
@@ -193,20 +200,22 @@ export default function Info() {
             marginLeft: "1vw",
           }}
         >
-          <img
+          <Image
             src="english.png"
-            alt=""
+            alt="english"
             style={{
               background: "Transparent",
               width: "4vw",
               height: "4vw",
               marginTop: "2vw",
             }}
+            width={50}
+            height={50}
             loading="lazy"
           />
-          <img
+          <Image
             src="hindi.png"
-            alt=""
+            alt="hindi"
             style={{
               background: "Transparent",
               width: "4vw",
@@ -215,6 +224,8 @@ export default function Info() {
               marginLeft: "0.5vw",
             }}
             loading="lazy"
+            width={50}
+            height={50}
           />
         </div>
       </div>

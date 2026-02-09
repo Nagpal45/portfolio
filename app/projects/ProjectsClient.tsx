@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { MotionDiv } from "@/components/ui/motion";
 import "./projects.css";
+import Image from "next/image";
 
 export function ImageSlider({ images }: { images: string[] }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -33,7 +34,7 @@ export function ImageSlider({ images }: { images: string[] }) {
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
       }}
     >
-      <img
+      <Image
         src={images[currentImageIndex]}
         alt={`Codaborate Screenshot ${currentImageIndex + 1}`}
         style={{
@@ -43,6 +44,8 @@ export function ImageSlider({ images }: { images: string[] }) {
           cursor: "pointer",
           transition: "opacity 0.5s ease",
         }}
+        width={800}
+        height={450}
       />
 
       {/* Navigation Buttons */}

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import "./dice.css";
 import emailjs from "@emailjs/browser";
+import Image from "next/image";
 
 const Dice = () => {
   const controls = useAnimation();
@@ -154,11 +155,13 @@ const Dice = () => {
                 <div className="rectangle">
                   <motion.div className="spLogo" animate={{scale: 1.2}} transition={{duration: 0.7, repeat: Infinity, repeatType: "reverse"}}>
                     <a href="https://open.spotify.com/user/31mferjcwy33ijsfznga4shrn3bi?si=9e82f68969ce497b">
-                      <img
+                      <Image
                         src="spotify.png"
                         alt="spotify"
                         className="spotifyLogo"
                         loading="lazy"
+                        width={50}
+                        height={50}
                       />
                     </a>
                   </motion.div>
@@ -167,11 +170,11 @@ const Dice = () => {
                     <div className="songArtist">Love Yourz by J.Cole</div>
                   </div>
                   <div className="playButtons">
-                    <img src="previous.png" className="skipPrevious" loading="lazy" />
-                    <img src="pause.png" className="pause" loading="lazy" />
-                    <img src = "playNext.png" className="skipNext" loading="lazy" />
+                    <Image src="previous.png" className="skipPrevious" loading="lazy" alt="previous" width={30} height={30} />
+                    <Image src="pause.png" className="pause" loading="lazy" alt="pause" width={30} height={30} />
+                    <Image src = "playNext.png" className="skipNext" loading="lazy" alt="next" width={30} height={30} />
                   </div>
-                  <img src="arrow.png" alt="arrow" className="arrow" loading="lazy" />
+                  <Image src="arrow.png" alt="arrow" className="arrow" loading="lazy" width={100} height={100} />
                   <p className="openSpotify">
                     If you listen to genres like Hip-Hop, Rock, R&B and Pop in
                     English, Punjabi and Hindi, Checkout my profile.
@@ -215,9 +218,9 @@ const Dice = () => {
                   />
                   <motion.button type="submit" className="submit" transition={{ duration: 2 }}>
                     {submitIcon === "check" ? (
-                      <img src="thanks.png" className="submitThanks" loading="lazy" />
+                      <Image src="thanks.png" className="submitThanks" loading="lazy" alt="thanks" width={30} height={30} />
                     ) : (
-                      <img src ="send.png" className="submitSend" loading="lazy" />
+                      <Image src ="send.png" className="submitSend" loading="lazy" alt="send" width={30} height={30} />
                     )}
                   </motion.button>
                 </form>
@@ -249,7 +252,7 @@ const Dice = () => {
         >
         </motion.div>
           <p className="stopText">Click the box to stop</p>
-          <img src="click.png" alt="dice" className="diceImg" loading="lazy" />
+          <Image src="click.png" alt="dice" className="diceImg" loading="lazy" width={50} height={50} />
       </div>
     </motion.div>
   );

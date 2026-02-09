@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function DownloadResumeButton() {
   return (
     <button
@@ -10,7 +12,7 @@ export default function DownloadResumeButton() {
         )
       }
     >
-      <img src="download.png" className="downloadIcon" alt="" />
+      <Image src="download.png" className="downloadIcon" alt="download" width={20} height={20} />
       <div className="resume">Resume</div>
     </button>
   );

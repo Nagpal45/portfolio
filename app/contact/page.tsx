@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./contact.css";
 import { 
   ContactWrapper, 
@@ -39,7 +40,7 @@ export default function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.7 }}
       >
-      <img src="arrow2.png" alt="arrow" className="arrow2" />
+      <Image src="arrow2.png" alt="arrow" className="arrow2" width={100} height={100} />
       <p>Connect with me on social media.</p>
       
       <PhoneSvg />

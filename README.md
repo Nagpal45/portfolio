@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Personal Portfolio 2026
 
-## Getting Started
+Welcome to the **Portfolio 2026** repository! This is a modern, fully-animated, and highly responsive personal developer portfolio. Built for exceptional performance and visual excellence, it showcases projects, work experience, and technical skills while maintaining top-tier SEO and accessibility practices.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 Key Features
+
+- **Modern Tech Stack**: Harnessing Next.js 16 App Router and React 19 for maximum rendering performance.
+- **Rich Animations**: Immersive user experience powered by **Framer Motion**, including fluid page transitions and scroll reveals.
+- **Interactive UI**: Custom animated 3D cursors, integrated interactive dice components, and beautiful layout designs.
+- **Built-in Security**: Hardened forms using `isomorphic-dompurify` to sanitize all user inputs continuously to protect against XSS injections.
+- **Live Contact Form**: Integrated with **EmailJS** for real-time portfolio inquiries sent directly to your inbox.
+- **Optimized SEO**: Automatically generated semantic `sitemap.ts`, `robots.ts`, localized metadata, and optimized fonts.
+- **Resume Distribution**: Built-in, clean UI flow for downloading professional résumés.
+
+---
+
+## 🛠️ Technologies & Concepts Used
+
+| Category | Technology | Purpose & Implementation |
+| :--- | :--- | :--- |
+| **Core Framework** | **Next.js 16** (App Router) | Server-Side Rendering (SSR), Static Generation (SSG), advanced layouts, and routing. |
+| **UI Library** | **React 19** | Utilizing React's newest paradigms, with automatic memoization via the React Compiler. |
+| **Type Safety** | **TypeScript** | Strict typings across components and sanitized data interfaces. |
+| **Styling Engine** | **Tailwind CSS v4** & CSS Modules | Combining utility-first speed with custom CSS scopes for complex interactive components. |
+| **Animations** | **Framer Motion v12** | Core engine for all UI micro-interactions, layout transitions, and the `motion.tsx` wrapper. |
+| **Form Handling** | **EmailJS Browser** | Client-side API allowing direct email routing securely from the `ContactClient.tsx`. |
+| **Input Security** | **Isomorphic DOMPurify** | Cross-environment utility ensuring any markup passed in remains thoroughly sanitized (`lib/sanitize.ts`). |
+
+---
+
+## 📂 Project Structure
+
+A quick look at how the application is organized:
+
+```text
+portfolio-2026/
+├── app/                  # Next.js 16 App Router Entry Points
+│   ├── contact/          # Contact Page and Client Forms
+│   ├── projects/         # Project Showcase Page
+│   ├── layout.tsx        # Global Application Layout
+│   ├── page.tsx          # Homepage
+│   └── sitemap/robots    # Automated technical SEO logic
+├── components/           # Reusable Modular React Components
+│   ├── Homepage/         # Custom complex UI (Intro, Dice, Techstack, Experience)
+│   ├── ui/               # Core isolated design system components (Motion, Resume Button)
+│   ├── cursor/           # Custom animated mouse follower
+│   └── navbar/footer     # Global persistent navigational elements
+├── lib/                  # Utility functions (e.g., sanitize.ts)
+└── public/               # Static assets (images, icons, resume PDFs)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Local Setup & Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To get this project running on your local machine, follow these steps:
 
-## Learn More
+### 1. Requirements
+Ensure you have **Node.js 20+** installed.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Installation
+Clone the repository and install all dependencies:
+```bash
+git clone https://github.com/your-username/portfolio-2026.git
+cd portfolio-2026
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Environment Variables
+To get the contact form fully operational, you will need to set up an [EmailJS](https://www.emailjs.com/) account.
+Create a `.env.local` file in the root directory and define the following variables:
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Running the Development Server
+Spin up the local Next.js server:
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to experience the site!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project is highly optimized for **Vercel** via the `vercel.json` configuration config present in the root. 
+
+Deploy easily by connecting the Git repository to a Vercel project or running:
+```bash
+npx vercel
+```
+Don't forget to configure your Environment Variables inside the Vercel dashboard prior to building.
+
+---
+*Built with ❤️ utilizing the cutting edge of Next.js and Framer Motion.*

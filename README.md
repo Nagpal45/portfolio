@@ -1,6 +1,6 @@
-# 🚀 Personal Portfolio 2026
+# 🚀 Personal Portfolio 
 
-Welcome to the **Portfolio 2026** repository! This is a modern, fully-animated, and highly responsive personal developer portfolio. Built for exceptional performance and visual excellence, it showcases projects, work experience, and technical skills while maintaining top-tier SEO and accessibility practices.
+Welcome to the **Portfolio** repository! This is a modern, fully-animated, and highly responsive personal developer portfolio. Built for exceptional performance and visual excellence, it showcases projects, work experience, and technical skills while maintaining top-tier SEO and accessibility practices.
 
 ---
 

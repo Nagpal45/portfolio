@@ -11,7 +11,7 @@ Welcome to the **Portfolio** repository! This is a modern, fully-animated, and h
 - **Interactive UI**: Custom animated 3D cursors, integrated interactive dice components, and beautiful layout designs.
 - **Built-in Security**: Hardened forms using `isomorphic-dompurify` to sanitize all user inputs continuously to protect against XSS injections.
 - **Live Contact Form**: Integrated with **EmailJS** for real-time portfolio inquiries sent directly to your inbox.
-- **Optimized SEO**: Automatically generated semantic `sitemap.ts`, `robots.ts`, localized metadata, and optimized fonts.
+- **Optimized SEO**: Generated semantic `sitemap.ts`, `robots.ts`, localized metadata, and optimized fonts.
 - **Resume Distribution**: Built-in, clean UI flow for downloading professional résumés.
 
 ---
@@ -41,7 +41,7 @@ portfolio-2026/
 │   ├── projects/         # Project Showcase Page
 │   ├── layout.tsx        # Global Application Layout
 │   ├── page.tsx          # Homepage
-│   └── sitemap/robots    # Automated technical SEO logic
+│   └── sitemap/robots    # Crawlability logic
 ├── components/           # Reusable Modular React Components
 │   ├── Homepage/         # Custom complex UI (Intro, Dice, Techstack, Experience)
 │   ├── ui/               # Core isolated design system components (Motion, Resume Button)

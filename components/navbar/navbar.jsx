@@ -167,7 +167,7 @@ export default function Navbar() {
             <Image src="/linkedin.png" className="socialItem linked" alt="" width={20} height={20} aria-hidden="true" />
           </motion.a>
           <motion.a
-            href="https://www.instagram.com/okvaibhav/?hl=en"
+            href="https://www.instagram.com/okvai.bhav/?hl=en"
             target="_blank"
             rel="noreferrer"
             whileHover={{ scale: 1.2 }}

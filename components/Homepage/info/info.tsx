@@ -56,7 +56,7 @@ export default function Info() {
           I am a Software Engineer specializing in modern full-stack development and Applied AI. My background in early-stage startups has shaped me to own the entire product lifecycle - from architecting robust backend infrastructure to deploying high-performance, user-facing applications.
           <br />
           <br />
-          I thrive in fast-paced environments, shipping production-grade systems across Web (Next.js) and Mobile (React Native).. Ultimately, I bridge the gap between complex AI pipelines and seamless user experiences, building end-to-end architectures that are secure, highly available, and optimized for scale.
+          I thrive in fast-paced environments, shipping production-grade systems across Web (Next.js) and Mobile (React Native). Ultimately, I bridge the gap between complex AI pipelines and seamless user experiences, building end-to-end architectures that are secure, highly available, and optimized for scale.
         </p>
         <div
           style={{

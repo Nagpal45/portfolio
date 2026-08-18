@@ -55,8 +55,8 @@ export default function Intro() {
               <MotionH2 className="detail">
                 <u>Full Stack & Applied AI</u> Engineer
               </MotionH2>
-              <MotionH2 className="detail">
-                Building performant AI-powered systems, real-time web applications, and scalable cloud infrastructure.
+              <MotionH2 className="detail detail2">
+                Building scalable, end-to-end products that drive real business value.
               </MotionH2>
             </MotionDiv>
           </MotionDiv>
